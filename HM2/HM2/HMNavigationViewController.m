@@ -17,6 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
+/**
+ *  @author JqlLove
+ *
+ *  @brief 自定义导航栏
+ *  @拦截push方法
+ */
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     
     if (self.viewControllers.count > 0) {
@@ -43,10 +49,10 @@
     
 }
 - (void)back{
+#warning self就是HMNavigationControll了 直接pop就行了
     [self popViewControllerAnimated:YES];
 }
 - (void)popToMore{
-    NSLog(@"---------");
     [self popToRootViewControllerAnimated:YES];
 }
 @end
