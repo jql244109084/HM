@@ -439,7 +439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PREFIX_HEADER = /Users/jiaoqilong/Desktop/working/HMWeiBo/HM2/HM2/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/jiaoqilong/Desktop/hm/HM/HM2/HM2/PrefixHeader.pch;
 				INFOPLIST_FILE = HM2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.guan.HM2;
@@ -452,7 +452,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PREFIX_HEADER = /Users/jiaoqilong/Desktop/working/HMWeiBo/HM2/HM2/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/jiaoqilong/Desktop/hm/HM/HM2/HM2/PrefixHeader.pch;
 				INFOPLIST_FILE = HM2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.guan.HM2;
