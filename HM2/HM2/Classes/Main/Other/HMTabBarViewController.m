@@ -55,7 +55,7 @@
     [viewController.tabBarItem setTitleTextAttributes:dictSelected forState:UIControlStateSelected];
     [viewController.tabBarItem setTitleTextAttributes:dictNormal forState:UIControlStateNormal];
     
-    viewController.view.backgroundColor = HMRandomColor;
+//    viewController.view.backgroundColor = HMRandomColor;
     viewController.tabBarItem.image = [UIImage imageNamed:imageNameString];
     viewController.tabBarItem.selectedImage = [[UIImage imageNamed:selecteImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     //设置导航控制器的根控制器

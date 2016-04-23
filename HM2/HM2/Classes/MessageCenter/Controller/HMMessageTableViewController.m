@@ -23,10 +23,11 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
      self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc ] initWithTitle:@"写私信" style:UIBarButtonItemStylePlain target:self action:@selector(composeMsg)];
+    
+    self.navigationItem.rightBarButtonItem.enabled = NO;
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
-    self.navigationItem.rightBarButtonItem.enabled = NO;
 }
 - (void)composeMsg {
     NSLog(@"--composeMsg");

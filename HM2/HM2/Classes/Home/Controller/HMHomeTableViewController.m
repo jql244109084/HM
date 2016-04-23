@@ -27,7 +27,7 @@
     NSLog(@"----popMore");
 }
 -(void)pop{
-    NSLog(@"----pop");
+    HMLog(@"----pop");
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

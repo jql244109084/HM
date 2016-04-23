@@ -7,6 +7,7 @@
 //
 
 #import "HMDiscoverTableViewController.h"
+#import "HMSeatchBarTextField.h"
 
 @interface HMDiscoverTableViewController ()
 
@@ -22,6 +23,11 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    HMSeatchBarTextField *searchBar = [HMSeatchBarTextField searchBar];
+    searchBar.width = 300;
+    searchBar.height = 30;
+    self.navigationItem.titleView = searchBar;
+    
 }
 
 - (void)didReceiveMemoryWarning {
