@@ -15,6 +15,33 @@
 
 @implementation HMNavigationViewController
 
+/**
+ *  @author JqlLove
+ *
+ *  @brief 统一设置导航栏的BarButtonItem的字体颜色
+ */
++(void)initialize{
+    
+    UIBarButtonItem *item = [UIBarButtonItem appearance];
+    
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[NSForegroundColorAttributeName] = [UIColor orangeColor];
+    param[NSFontAttributeName] = [UIFont systemFontOfSize:13];
+    
+    
+    NSMutableDictionary *paramDisable = [NSMutableDictionary dictionary];
+    paramDisable[NSForegroundColorAttributeName] = [UIColor colorWithRed:0.6 green:0.6 blue:0.6 alpha:1.0 ];
+    paramDisable[NSFontAttributeName] = [UIFont systemFontOfSize:13];
+    
+    [item setTitleTextAttributes:param forState:UIControlStateNormal];
+    
+    [item setTitleTextAttributes:paramDisable forState:UIControlStateDisabled];
+    
+    
+}
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 }

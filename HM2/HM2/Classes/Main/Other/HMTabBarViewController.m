@@ -18,6 +18,7 @@
 
 @implementation HMTabBarViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -46,21 +47,19 @@
     //被包装控制器的属性设置
     viewController.tabBarItem.title = title;
     viewController.navigationItem.title = title;
-    
     NSMutableDictionary *dictNormal = [NSMutableDictionary dictionary];
     dictNormal[NSForegroundColorAttributeName] = HMColor(123, 123, 123);
-    
     NSMutableDictionary *dictSelected = [NSMutableDictionary dictionary];
     dictSelected[NSForegroundColorAttributeName] = [UIColor orangeColor];
     
     [viewController.tabBarItem setTitleTextAttributes:dictSelected forState:UIControlStateSelected];
     [viewController.tabBarItem setTitleTextAttributes:dictNormal forState:UIControlStateNormal];
+    
     viewController.view.backgroundColor = HMRandomColor;
     viewController.tabBarItem.image = [UIImage imageNamed:imageNameString];
     viewController.tabBarItem.selectedImage = [[UIImage imageNamed:selecteImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     //设置导航控制器的根控制器
     HMNavigationViewController *navigationController = [[HMNavigationViewController alloc] initWithRootViewController:viewController];
-
     //添加到tabar控制器
     [self addChildViewController:navigationController];
     
