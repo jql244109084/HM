@@ -11,6 +11,7 @@
 #import "HMHomeTableViewController.h"
 #import "HMMessageTableViewController.h"
 #import "HMDiscoverTableViewController.h"
+#import "HMNavigationViewController.h"
 
 @interface HMTabBarViewController ()
 @end
@@ -58,7 +59,7 @@
     viewController.tabBarItem.image = [UIImage imageNamed:imageNameString];
     viewController.tabBarItem.selectedImage = [[UIImage imageNamed:selecteImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     //设置导航控制器的根控制器
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    HMNavigationViewController *navigationController = [[HMNavigationViewController alloc] initWithRootViewController:viewController];
 
     //添加到tabar控制器
     [self addChildViewController:navigationController];

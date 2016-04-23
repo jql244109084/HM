@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -26,7 +27,6 @@
     HMTest2ViewController *test2 = [[HMTest2ViewController alloc] init];
     test2.view.backgroundColor = [UIColor blueColor];
     test2.title = @"test2";
-    test2.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:test2 animated:YES];
 }
 

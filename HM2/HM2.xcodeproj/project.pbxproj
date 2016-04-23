@@ -10,6 +10,7 @@
 		611AB45E1CCA3287003C2211 /* HMTest1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 611AB45D1CCA3287003C2211 /* HMTest1ViewController.m */; };
 		611AB4611CCA3292003C2211 /* HMTest2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 611AB4601CCA3292003C2211 /* HMTest2ViewController.m */; };
 		61DB13B61CCB0DEC00D35E26 /* UIView+HMExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DB13B51CCB0DEC00D35E26 /* UIView+HMExtention.m */; };
+		61DB13B91CCB233800D35E26 /* HMNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DB13B81CCB233800D35E26 /* HMNavigationViewController.m */; };
 		61FFA3271CCA02BB00C2C502 /* HMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61FFA3261CCA02BB00C2C502 /* HMTabBarViewController.m */; };
 		61FFA32A1CCA145300C2C502 /* HMHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61FFA3291CCA145300C2C502 /* HMHomeTableViewController.m */; };
 		61FFA32D1CCA146600C2C502 /* HMMessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61FFA32C1CCA146600C2C502 /* HMMessageTableViewController.m */; };
@@ -48,6 +49,8 @@
 		611AB4601CCA3292003C2211 /* HMTest2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTest2ViewController.m; sourceTree = "<group>"; };
 		61DB13B41CCB0DEC00D35E26 /* UIView+HMExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HMExtention.h"; sourceTree = "<group>"; };
 		61DB13B51CCB0DEC00D35E26 /* UIView+HMExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HMExtention.m"; sourceTree = "<group>"; };
+		61DB13B71CCB233800D35E26 /* HMNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNavigationViewController.h; sourceTree = "<group>"; };
+		61DB13B81CCB233800D35E26 /* HMNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNavigationViewController.m; sourceTree = "<group>"; };
 		61FFA3251CCA02BB00C2C502 /* HMTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTabBarViewController.h; sourceTree = "<group>"; };
 		61FFA3261CCA02BB00C2C502 /* HMTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTabBarViewController.m; sourceTree = "<group>"; };
 		61FFA3281CCA145300C2C502 /* HMHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMHomeTableViewController.h; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 				611AB4601CCA3292003C2211 /* HMTest2ViewController.m */,
 				61DB13B41CCB0DEC00D35E26 /* UIView+HMExtention.h */,
 				61DB13B51CCB0DEC00D35E26 /* UIView+HMExtention.m */,
+				61DB13B71CCB233800D35E26 /* HMNavigationViewController.h */,
+				61DB13B81CCB233800D35E26 /* HMNavigationViewController.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 				61FFA3331CCA148800C2C502 /* HMProfileTableViewController.m in Sources */,
 				61FFA3301CCA147A00C2C502 /* HMDiscoverTableViewController.m in Sources */,
 				61FFA32A1CCA145300C2C502 /* HMHomeTableViewController.m in Sources */,
+				61DB13B91CCB233800D35E26 /* HMNavigationViewController.m in Sources */,
 				61FFA32D1CCA146600C2C502 /* HMMessageTableViewController.m in Sources */,
 				611AB45E1CCA3287003C2211 /* HMTest1ViewController.m in Sources */,
 			);
