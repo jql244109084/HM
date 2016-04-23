@@ -7,6 +7,7 @@
 //
 
 #import "HMNavigationViewController.h"
+#import "UIBarButtonItem+HMBarButtonItem.h"
 
 @interface HMNavigationViewController ()
 
@@ -26,28 +27,28 @@
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     
     if (self.viewControllers.count > 0) {
-        UIButton *leftBarItem = [UIButton buttonWithType:UIButtonTypeCustom];
-        [leftBarItem setBackgroundImage:[UIImage imageNamed:@"navigationbar_back"] forState:UIControlStateNormal];
-        [leftBarItem setBackgroundImage:[UIImage imageNamed:@"navigationbar_back_highlighted"] forState:UIControlStateHighlighted];
-        leftBarItem.size = leftBarItem.currentBackgroundImage.size;
-        [leftBarItem addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftBarItem];
+        UIBarButtonItem *leftleftBarItem = [UIBarButtonItem itemWithTaget:self action:@selector(back) image:@"navigationbar_back" heightImage:@"navigationbar_back_highlighted"];
         
-        UIButton *rightBarItem = [UIButton buttonWithType:UIButtonTypeCustom];
-        [rightBarItem setBackgroundImage:[UIImage imageNamed:@"navigationbar_more"] forState:UIControlStateNormal];
-        [rightBarItem setBackgroundImage:[UIImage imageNamed:@"navigationbar_more_highlighted"] forState:UIControlStateHighlighted];
-        rightBarItem.size = rightBarItem.currentBackgroundImage.size;
-        [rightBarItem addTarget:self action:@selector(popToMore) forControlEvents:UIControlEventTouchUpInside];
-        viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBarItem];
+        viewController.navigationItem.leftBarButtonItem = leftleftBarItem;
+        
+        
+        UIBarButtonItem *rightBarItem = [UIBarButtonItem itemWithTaget:self action:@selector(popToMore) image:@"navigationbar_more" heightImage:@"navigationbar_more_highlighted"];
+        
+        viewController.navigationItem.rightBarButtonItem = rightBarItem;
         
         viewController.hidesBottomBarWhenPushed = YES;
     }
     
     [super pushViewController:viewController animated:YES];
 
-
-    
 }
+
+
+
+
+
+
+
 - (void)back{
 #warning self就是HMNavigationControll了 直接pop就行了
     [self popViewControllerAnimated:YES];

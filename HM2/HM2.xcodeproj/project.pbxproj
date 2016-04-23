@@ -18,6 +18,7 @@
 		61702A2E1CCB5B17002E15A5 /* HMTest2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61702A191CCB5B17002E15A5 /* HMTest2ViewController.m */; };
 		61702A2F1CCB5B17002E15A5 /* HMMessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61702A1D1CCB5B17002E15A5 /* HMMessageTableViewController.m */; };
 		61702A301CCB5B17002E15A5 /* HMProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61702A231CCB5B17002E15A5 /* HMProfileTableViewController.m */; };
+		61702A331CCB6C70002E15A5 /* UIBarButtonItem+HMBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 61702A321CCB6C70002E15A5 /* UIBarButtonItem+HMBarButtonItem.m */; };
 		6918A7321CC71BBE009B2A11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6918A7311CC71BBE009B2A11 /* Assets.xcassets */; };
 		6918A7351CC71BBE009B2A11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6918A7331CC71BBE009B2A11 /* LaunchScreen.storyboard */; };
 		6918A7401CC71BBE009B2A11 /* HM2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6918A73F1CC71BBE009B2A11 /* HM2Tests.m */; };
@@ -64,6 +65,8 @@
 		61702A1D1CCB5B17002E15A5 /* HMMessageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMessageTableViewController.m; sourceTree = "<group>"; };
 		61702A221CCB5B17002E15A5 /* HMProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMProfileTableViewController.h; sourceTree = "<group>"; };
 		61702A231CCB5B17002E15A5 /* HMProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMProfileTableViewController.m; sourceTree = "<group>"; };
+		61702A311CCB6C70002E15A5 /* UIBarButtonItem+HMBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+HMBarButtonItem.h"; path = "../Other/UIBarButtonItem+HMBarButtonItem.h"; sourceTree = "<group>"; };
+		61702A321CCB6C70002E15A5 /* UIBarButtonItem+HMBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+HMBarButtonItem.m"; path = "../Other/UIBarButtonItem+HMBarButtonItem.m"; sourceTree = "<group>"; };
 		6918A7221CC71BBE009B2A11 /* HM2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HM2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6918A7311CC71BBE009B2A11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6918A7341CC71BBE009B2A11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -195,6 +198,8 @@
 			children = (
 				61702A0A1CCB5B17002E15A5 /* UIView+HMExtention.h */,
 				61702A0B1CCB5B17002E15A5 /* UIView+HMExtention.m */,
+				61702A311CCB6C70002E15A5 /* UIBarButtonItem+HMBarButtonItem.h */,
+				61702A321CCB6C70002E15A5 /* UIBarButtonItem+HMBarButtonItem.m */,
 			);
 			path = Catogra;
 			sourceTree = "<group>";
@@ -495,6 +500,7 @@
 				61702A271CCB5B17002E15A5 /* HMHomeTableViewController.m in Sources */,
 				61702A2C1CCB5B17002E15A5 /* main.m in Sources */,
 				61702A2A1CCB5B17002E15A5 /* HMNavigationViewController.m in Sources */,
+				61702A331CCB6C70002E15A5 /* UIBarButtonItem+HMBarButtonItem.m in Sources */,
 				61702A2D1CCB5B17002E15A5 /* HMTest1ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
