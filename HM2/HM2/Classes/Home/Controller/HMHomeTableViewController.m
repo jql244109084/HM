@@ -8,6 +8,7 @@
 
 #import "HMHomeTableViewController.h"
 #import "UIBarButtonItem+HMBarButtonItem.h"
+#import "HMMenu.h"
 
 @interface HMHomeTableViewController ()
 
@@ -31,25 +32,22 @@
     [homeTitleButton setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
     homeTitleButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 40);
     homeTitleButton.imageEdgeInsets = UIEdgeInsetsMake(0, 50, 0, 0);
-    [homeTitleButton addTarget:self action:@selector(titleClick) forControlEvents:UIControlEventTouchUpInside];
+    [homeTitleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.titleView = homeTitleButton;
     homeTitleButton.backgroundColor = [UIColor yellowColor];
 
 }
-- (void)titleClick{
-    UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
-    UIView *view = [[UIView alloc] init];
-    view.frame = window.bounds;
+/**
+ *  @author JqlLove
+ *
+ *  @brief 点击标题
+ */
+- (void)titleClick:(UIButton *)button
+{
+    HMMenu *dropMenu = [[HMMenu alloc] init];
+    [dropMenu showFrom:button];
     
-    [window addSubview:view];
-    view.backgroundColor = [UIColor yellowColor];
     
-    UIImageView *imageView = [[UIImageView alloc] init];
-    
-    imageView.image = [ UIImage imageNamed:@"popover_background"];
-    imageView.height = 300;
-    imageView.width = 217;
-    [view addSubview:imageView];
     
 }
 -(void)popMore{

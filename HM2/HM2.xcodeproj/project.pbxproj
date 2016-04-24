@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		614ED37D1CCC71CE001EE125 /* HMMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 614ED37C1CCC71CE001EE125 /* HMMenu.m */; };
 		61702A261CCB5B17002E15A5 /* HMDiscoverTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 617029FF1CCB5B17002E15A5 /* HMDiscoverTableViewController.m */; };
 		61702A271CCB5B17002E15A5 /* HMHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61702A051CCB5B17002E15A5 /* HMHomeTableViewController.m */; };
 		61702A281CCB5B17002E15A5 /* UIView+HMExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 61702A0B1CCB5B17002E15A5 /* UIView+HMExtention.m */; };
@@ -45,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		611AB45B1CCA1DDD003C2211 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		614ED37B1CCC71CE001EE125 /* HMMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMenu.h; sourceTree = "<group>"; };
+		614ED37C1CCC71CE001EE125 /* HMMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMenu.m; sourceTree = "<group>"; };
 		617029FE1CCB5B17002E15A5 /* HMDiscoverTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDiscoverTableViewController.h; sourceTree = "<group>"; };
 		617029FF1CCB5B17002E15A5 /* HMDiscoverTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDiscoverTableViewController.m; sourceTree = "<group>"; };
 		61702A041CCB5B17002E15A5 /* HMHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMHomeTableViewController.h; sourceTree = "<group>"; };
@@ -181,6 +184,8 @@
 		61702A071CCB5B17002E15A5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				614ED37B1CCC71CE001EE125 /* HMMenu.h */,
+				614ED37C1CCC71CE001EE125 /* HMMenu.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -510,6 +515,7 @@
 				61702A3A1CCB921D002E15A5 /* HMSeatchBarTextField.m in Sources */,
 				61702A2F1CCB5B17002E15A5 /* HMMessageTableViewController.m in Sources */,
 				61702A301CCB5B17002E15A5 /* HMProfileTableViewController.m in Sources */,
+				614ED37D1CCC71CE001EE125 /* HMMenu.m in Sources */,
 				61702A261CCB5B17002E15A5 /* HMDiscoverTableViewController.m in Sources */,
 				61702A271CCB5B17002E15A5 /* HMHomeTableViewController.m in Sources */,
 				61702A2C1CCB5B17002E15A5 /* main.m in Sources */,
