@@ -21,7 +21,36 @@
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTaget:self action:@selector(pop) image:@"navigationbar_friendsearch" heightImage:@"navigationbar_friendsearch_highlighted"];
     
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTaget:self action:@selector(popMore) image:@"navigationbar_pop" heightImage:@"navigationbar_pop_highlighted"];
+    
+    
+    UIButton *homeTitleButton = [[UIButton alloc] init];
+    homeTitleButton.width = 90;
+    homeTitleButton.height = 30;
+    [homeTitleButton setTitle:@"首页" forState:UIControlStateNormal];
+    [homeTitleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [homeTitleButton setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
+    homeTitleButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 40);
+    homeTitleButton.imageEdgeInsets = UIEdgeInsetsMake(0, 50, 0, 0);
+    [homeTitleButton addTarget:self action:@selector(titleClick) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.titleView = homeTitleButton;
+    homeTitleButton.backgroundColor = [UIColor yellowColor];
 
+}
+- (void)titleClick{
+    UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
+    UIView *view = [[UIView alloc] init];
+    view.frame = window.bounds;
+    
+    [window addSubview:view];
+    view.backgroundColor = [UIColor yellowColor];
+    
+    UIImageView *imageView = [[UIImageView alloc] init];
+    
+    imageView.image = [ UIImage imageNamed:@"popover_background"];
+    imageView.height = 300;
+    imageView.width = 217;
+    [view addSubview:imageView];
+    
 }
 -(void)popMore{
     NSLog(@"----popMore");
