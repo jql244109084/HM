@@ -73,7 +73,7 @@
     
 }
 
-#pragma HMTabBar的代理方法
+#pragma HMTabBar -- 代理方法
 
 -(void)tabBar:(HMTabBar *)tabBar didClick:(UIButton *)button{
     

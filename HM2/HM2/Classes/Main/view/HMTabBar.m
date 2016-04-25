@@ -15,12 +15,11 @@
 @end
 
 @implementation HMTabBar
-
+@dynamic delegate;
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
         
         UIButton *plusBuuton = [[UIButton alloc] init];
         [plusBuuton setBackgroundImage:[UIImage imageNamed:@"tabbar_compose_button"] forState:UIControlStateNormal];

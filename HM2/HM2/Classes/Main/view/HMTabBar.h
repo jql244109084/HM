@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-@class HMTabBar;
 
+//代理 协议
+@class HMTabBar;
 @protocol HMTabBarDelegate <UITabBarDelegate>
 @optional
 -(void)tabBar:(HMTabBar *)tabBar didClick:(UIButton *)button;
-
-
 @end
 
 @interface HMTabBar : UITabBar
