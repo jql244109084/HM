@@ -27,6 +27,7 @@
         UIImageView *imageView = [[UIImageView alloc] init];
         imageView.userInteractionEnabled = YES;
         imageView.image = [ UIImage imageNamed:@"popover_background"];
+        imageView.userInteractionEnabled = YES;
         [self addSubview:imageView];
         imageView.width = 217;
         imageView.height = 200;
@@ -50,13 +51,19 @@
     return menu;
 }
 - (void)showFrom:(UIView *)view{
+    
     UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
     self.frame = window.bounds;
-    
+   CGRect newRect = [view convertRect:view.bounds toView:nil];
     [window addSubview:self];
-    self.cover.y = 30;
+    self.cover.y = CGRectGetMaxY(newRect);
+
+    self.cover.x = CGRectGetMidX(newRect) - 217 * 0.5;
     
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self removeFromSuperview];
+}
 
 @end
