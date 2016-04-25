@@ -12,8 +12,9 @@
 #import "HMMessageTableViewController.h"
 #import "HMDiscoverTableViewController.h"
 #import "HMNavigationViewController.h"
+#import "HMTabBar.h"
 
-@interface HMTabBarViewController ()
+@interface HMTabBarViewController ()<HMTabBarDelegate>
 @end
 
 @implementation HMTabBarViewController
@@ -34,7 +35,14 @@
     
     HMProfileTableViewController *profile = [[HMProfileTableViewController alloc] init];
     [self addChildViewControllerWithController:profile title:@"我" imageName:@"tabbar_profile" selecteImageName:@"tabbar_profile_selected"];
+    
+    //替换系统自带的tabBar
+    HMTabBar *tabBar = [[HMTabBar alloc] init];
+    tabBar.delegate = self;
+    
+    [self setValue:tabBar forKey:@"tabBar"];
 }
+
 /**
  *  @author JqlLove
  *  @brief 导航控制器包装传过来的控制器
@@ -65,7 +73,14 @@
     
 }
 
+#pragma HMTabBar的代理方法
 
+-(void)tabBar:(HMTabBar *)tabBar didClick:(UIButton *)button{
+    
+    UIViewController *vc = [[UIViewController alloc] init];
+    vc.view.backgroundColor = [UIColor yellowColor];
+    [self  presentViewController:vc animated:YES completion:nil];
+}
 
 
 
