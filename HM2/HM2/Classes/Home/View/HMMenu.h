@@ -7,10 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+@class HMMenu;
+@protocol HMMenuDelegate <NSObject>
+
+@optional
+-(void)menuWillDisMiss:(HMMenu *)menu;
+-(void)menuWillShow:(HMMenu *)menu;
+
+@end
 
 @interface HMMenu : UIView
 
 +(instancetype)menu;
 -(void)showFrom:(UIView *)view;
+
+-(void)menuDismiss;
+
+@property (nonatomic,weak) id<HMMenuDelegate> delegate;
 
 @end

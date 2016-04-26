@@ -57,13 +57,24 @@
    CGRect newRect = [view convertRect:view.bounds toView:nil];
     [window addSubview:self];
     self.cover.y = CGRectGetMaxY(newRect);
-
     self.cover.x = CGRectGetMidX(newRect) - 217 * 0.5;
     
+    
+    if ([self.delegate respondsToSelector:@selector(menuWillShow:)]) {
+        [self.delegate menuWillShow:self];
+    }
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+-(void)menuDismiss{
     [self removeFromSuperview];
+    
+    if ([self.delegate respondsToSelector:@selector(menuWillDisMiss:)]) {
+        [self.delegate menuWillDisMiss:self];
+    }
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self menuDismiss];
+
 }
 
 @end

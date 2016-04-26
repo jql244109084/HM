@@ -10,7 +10,7 @@
 #import "UIBarButtonItem+HMBarButtonItem.h"
 #import "HMMenu.h"
 
-@interface HMHomeTableViewController ()
+@interface HMHomeTableViewController ()<HMMenuDelegate>
 
 @end
 
@@ -30,6 +30,7 @@
     [homeTitleButton setTitle:@"首页" forState:UIControlStateNormal];
     [homeTitleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [homeTitleButton setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
+    [homeTitleButton setImage:[UIImage imageNamed:@"navigationbar_arrow_up"] forState:UIControlStateSelected];
     homeTitleButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 40);
     homeTitleButton.imageEdgeInsets = UIEdgeInsetsMake(0, 50, 0, 0);
     [homeTitleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -45,10 +46,35 @@
 - (void)titleClick:(UIButton *)button
 {
     HMMenu *dropMenu = [[HMMenu alloc] init];
+    dropMenu.delegate = self;
     [dropMenu showFrom:button];
     
     
+
     
+}
+#pragma mark －菜单的代理方法
+/**
+ *  @author JqlLove
+ *
+ *  @brief 下拉菜单的代理方法
+ *
+ *  @param menu 传过来显示的菜单
+ */
+- (void)menuWillShow:(HMMenu *)menu{
+    UIButton *button = (UIButton *)self.navigationItem.titleView;
+    button.selected = YES;
+}
+/**
+ *  @author JqlLove
+ *
+ *  @brief 下拉菜单的代理方法
+ *
+ *  @param menu 传过来显示的菜单
+ */
+- (void)menuWillDisMiss:(HMMenu *)menu{
+    UIButton *button = (UIButton *)self.navigationItem.titleView;
+    button.selected = NO;
 }
 -(void)popMore{
     NSLog(@"----popMore");
