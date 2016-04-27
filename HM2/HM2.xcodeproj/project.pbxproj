@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6117B08D1CD0F19E00C764CF /* HMNewFutureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6117B08C1CD0F19E00C764CF /* HMNewFutureViewController.m */; };
 		614ED37D1CCC71CE001EE125 /* HMMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 614ED37C1CCC71CE001EE125 /* HMMenu.m */; };
 		6152C3E81CCE300E00305E59 /* HMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6152C3E71CCE300E00305E59 /* HMTabBar.m */; };
 		61702A261CCB5B17002E15A5 /* HMDiscoverTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 617029FF1CCB5B17002E15A5 /* HMDiscoverTableViewController.m */; };
@@ -46,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6117B08B1CD0F19E00C764CF /* HMNewFutureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNewFutureViewController.h; sourceTree = "<group>"; };
+		6117B08C1CD0F19E00C764CF /* HMNewFutureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNewFutureViewController.m; sourceTree = "<group>"; };
 		611AB45B1CCA1DDD003C2211 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		614ED37B1CCC71CE001EE125 /* HMMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMenu.h; sourceTree = "<group>"; };
 		614ED37C1CCC71CE001EE125 /* HMMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMenu.m; sourceTree = "<group>"; };
@@ -113,9 +116,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6117B08A1CD0F14A00C764CF /* NewFuture */ = {
+			isa = PBXGroup;
+			children = (
+				6117B08B1CD0F19E00C764CF /* HMNewFutureViewController.h */,
+				6117B08C1CD0F19E00C764CF /* HMNewFutureViewController.m */,
+			);
+			path = NewFuture;
+			sourceTree = "<group>";
+		};
 		617029FB1CCB5B17002E15A5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6117B08A1CD0F14A00C764CF /* NewFuture */,
 				617029FC1CCB5B17002E15A5 /* Discover */,
 				61702A021CCB5B17002E15A5 /* Home */,
 				61702A081CCB5B17002E15A5 /* Main */,
@@ -528,6 +541,7 @@
 				61702A2A1CCB5B17002E15A5 /* HMNavigationViewController.m in Sources */,
 				61702A331CCB6C70002E15A5 /* UIBarButtonItem+HMBarButtonItem.m in Sources */,
 				61702A2D1CCB5B17002E15A5 /* HMTest1ViewController.m in Sources */,
+				6117B08D1CD0F19E00C764CF /* HMNewFutureViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

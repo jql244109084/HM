@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "HMTabBarViewController.h"
+#import "HMNewFutureViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,7 +23,10 @@
     self.window.frame = [UIScreen mainScreen].bounds;
     //设置窗口的跟控制器
     HMTabBarViewController *rootController = [[HMTabBarViewController alloc] init];
-    self.window.rootViewController = rootController;
+//    self.window.rootViewController = rootController;
+    
+    HMNewFutureViewController *newFuture = [[HMNewFutureViewController alloc] init];
+    self.window.rootViewController = newFuture;
     //显示窗口
     [self.window makeKeyAndVisible];
     

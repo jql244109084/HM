@@ -35,7 +35,6 @@
 }
 
 #pragma mark - Table view data source
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 20;
 }
@@ -49,10 +48,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
     cell.textLabel.text = [NSString stringWithFormat:@"---消息---%ld",(long)indexPath.row];
+    
     return cell;
 }
-
-
 #pragma mark - Table view dalegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
