@@ -36,6 +36,9 @@
         
         imageView.y = 0;
         imageView.x = scrollViewW * i;
+        if (3 == i) {
+            [self setupLastImageView:imageView];
+        }
         [scrollView addSubview:imageView];
     }
     scrollView.contentSize = CGSizeMake(scrollViewW * HMPageCount, scrollViewH);
@@ -54,13 +57,46 @@
     pageControl.currentPageIndicatorTintColor = [UIColor orangeColor];
     pageControl.pageIndicatorTintColor = HMColor(189,189, 189);
     [pageControl updateCurrentPageDisplay];
-
+    
     
 
 }
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    double offsetX = scrollView.contentOffset.x / self.view.width;
+- (void)setupLastImageView:(UIImageView *)imageView {
+    //1.分享按钮
+    imageView.userInteractionEnabled = YES;
+    UIButton *shareBtn = [[UIButton alloc] init];
+    [shareBtn setImage:[UIImage imageNamed:@"new_feature_share_false"] forState:UIControlStateNormal];
+    [shareBtn setImage:[UIImage imageNamed:@"new_feature_share_true"] forState:UIControlStateSelected];
+    [shareBtn setTitle:@"分享给大家" forState:UIControlStateNormal];
+    [shareBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    shareBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+    shareBtn.width = 200;
+    shareBtn.height = 30;
+    shareBtn.centerX = imageView.width * 0.5;
+    shareBtn.centerY = imageView.height * 0.65;
+    [shareBtn addTarget:self action:@selector(shareClick:) forControlEvents:UIControlEventTouchUpInside];
+    shareBtn.titleEdgeInsets =  UIEdgeInsetsMake(0, 10, 0, 0);
+    [imageView addSubview:shareBtn];
     
+
+    //2.开始微博
+    UIButton *startBtn = [[UIButton alloc] init];
+    [startBtn setBackgroundImage:[UIImage imageNamed:@"new_feature_finish_button"] forState:UIControlStateNormal];
+    [startBtn setBackgroundImage:[UIImage imageNamed:@"new_feature_finish_button_highlighted"] forState:UIControlStateHighlighted];
+    startBtn.size = startBtn.currentBackgroundImage.size;
+    startBtn.centerY = imageView.height * 0.75;
+    startBtn.centerX = shareBtn.centerX;
+    [startBtn setTitle:@"开始微博" forState:UIControlStateNormal];
+    [imageView addSubview:startBtn];
+    
+    
+    
+}
+- (void)shareClick:(UIButton *)shareBtn {
+    shareBtn.selected = !shareBtn.isSelected;
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    double offsetX = scrollView.contentOffset.x / self.view.width;
     self.pageControl.currentPage = (int)(offsetX + 0.5);
     
 }
