@@ -23,6 +23,7 @@
 		61702A301CCB5B17002E15A5 /* HMProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61702A231CCB5B17002E15A5 /* HMProfileTableViewController.m */; };
 		61702A331CCB6C70002E15A5 /* UIBarButtonItem+HMBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 61702A321CCB6C70002E15A5 /* UIBarButtonItem+HMBarButtonItem.m */; };
 		61702A3A1CCB921D002E15A5 /* HMSeatchBarTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 61702A391CCB921D002E15A5 /* HMSeatchBarTextField.m */; };
+		617C477D1DFAD8EB00F51207 /* HMOauthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 617C477C1DFAD8EB00F51207 /* HMOauthViewController.m */; };
 		6918A7321CC71BBE009B2A11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6918A7311CC71BBE009B2A11 /* Assets.xcassets */; };
 		6918A7351CC71BBE009B2A11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6918A7331CC71BBE009B2A11 /* LaunchScreen.storyboard */; };
 		6918A7401CC71BBE009B2A11 /* HM2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6918A73F1CC71BBE009B2A11 /* HM2Tests.m */; };
@@ -79,6 +80,8 @@
 		61702A321CCB6C70002E15A5 /* UIBarButtonItem+HMBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+HMBarButtonItem.m"; path = "../Other/UIBarButtonItem+HMBarButtonItem.m"; sourceTree = "<group>"; };
 		61702A381CCB921D002E15A5 /* HMSeatchBarTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSeatchBarTextField.h; sourceTree = "<group>"; };
 		61702A391CCB921D002E15A5 /* HMSeatchBarTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSeatchBarTextField.m; sourceTree = "<group>"; };
+		617C477B1DFAD8EB00F51207 /* HMOauthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMOauthViewController.h; sourceTree = "<group>"; };
+		617C477C1DFAD8EB00F51207 /* HMOauthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMOauthViewController.m; sourceTree = "<group>"; };
 		6918A7221CC71BBE009B2A11 /* HM2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HM2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6918A7311CC71BBE009B2A11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6918A7341CC71BBE009B2A11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -128,6 +131,7 @@
 		617029FB1CCB5B17002E15A5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				617C477A1DFAD8CC00F51207 /* Oauth */,
 				6117B08A1CD0F14A00C764CF /* NewFuture */,
 				617029FC1CCB5B17002E15A5 /* Discover */,
 				61702A021CCB5B17002E15A5 /* Home */,
@@ -338,6 +342,15 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		617C477A1DFAD8CC00F51207 /* Oauth */ = {
+			isa = PBXGroup;
+			children = (
+				617C477B1DFAD8EB00F51207 /* HMOauthViewController.h */,
+				617C477C1DFAD8EB00F51207 /* HMOauthViewController.m */,
+			);
+			path = Oauth;
+			sourceTree = "<group>";
+		};
 		6918A7191CC71BBE009B2A11 = {
 			isa = PBXGroup;
 			children = (
@@ -541,6 +554,7 @@
 				61702A2C1CCB5B17002E15A5 /* main.m in Sources */,
 				61702A2A1CCB5B17002E15A5 /* HMNavigationViewController.m in Sources */,
 				61702A331CCB6C70002E15A5 /* UIBarButtonItem+HMBarButtonItem.m in Sources */,
+				617C477D1DFAD8EB00F51207 /* HMOauthViewController.m in Sources */,
 				61702A2D1CCB5B17002E15A5 /* HMTest1ViewController.m in Sources */,
 				6117B08D1CD0F19E00C764CF /* HMNewFutureViewController.m in Sources */,
 			);
