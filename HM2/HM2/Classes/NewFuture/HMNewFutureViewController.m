@@ -7,6 +7,7 @@
 //
 
 #import "HMNewFutureViewController.h"
+#import "HMTabBarViewController.h"
 #define HMPageCount 4
 
 @interface HMNewFutureViewController ()<UIScrollViewDelegate>
@@ -87,6 +88,7 @@
     startBtn.centerY = imageView.height * 0.75;
     startBtn.centerX = shareBtn.centerX;
     [startBtn setTitle:@"开始微博" forState:UIControlStateNormal];
+    [startBtn addTarget:self action:@selector(startBtn) forControlEvents:UIControlEventTouchUpInside];
     [imageView addSubview:startBtn];
     
     
@@ -94,6 +96,17 @@
 }
 - (void)shareClick:(UIButton *)shareBtn {
     shareBtn.selected = !shareBtn.isSelected;
+}
+/**
+ *  @author JqlLove
+ *
+ *  @brief 开始微博
+ */
+- (void)startBtn {
+   
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    window.rootViewController = [[HMTabBarViewController alloc] init];
+    
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     double offsetX = scrollView.contentOffset.x / self.view.width;

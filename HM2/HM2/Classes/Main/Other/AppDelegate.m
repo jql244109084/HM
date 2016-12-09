@@ -21,12 +21,23 @@
     //设置窗口
     self.window = [[UIWindow alloc] init];
     self.window.frame = [UIScreen mainScreen].bounds;
-    //设置窗口的跟控制器
-    HMTabBarViewController *rootController = [[HMTabBarViewController alloc] init];
-//    self.window.rootViewController = rootController;
     
-    HMNewFutureViewController *newFuture = [[HMNewFutureViewController alloc] init];
-    self.window.rootViewController = newFuture;
+    //从本地读取版本号
+    NSString *key = @"CFBundleVersion";
+    NSString *lastBundleVersion = [[NSUserDefaults standardUserDefaults] objectForKey:key];
+    //从plist中读取版本号 升级的时候新特性显示
+    NSDictionary *plistDict = [NSBundle mainBundle].infoDictionary;
+    NSString *bundleVersion = plistDict[key];
+    if ([lastBundleVersion isEqualToString:bundleVersion]) {
+        //设置窗口的跟控制器
+        HMTabBarViewController *rootController = [[HMTabBarViewController alloc] init];
+            self.window.rootViewController = rootController;
+    }else{//不想等就不是同一个版本
+        HMNewFutureViewController *newFuture = [[HMNewFutureViewController alloc] init];
+        self.window.rootViewController = newFuture;
+        //存储
+        [[NSUserDefaults standardUserDefaults] setObject:bundleVersion forKey:key];
+    }
     //显示窗口
     [self.window makeKeyAndVisible];
     
