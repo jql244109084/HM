@@ -11,6 +11,7 @@
 #import "HMNewFutureViewController.h"
 #import "HMOauthViewController.h"
 #import "HMAcountModel.h"
+#import "HMAccountTool.h"
 
 @interface AppDelegate ()
 
@@ -23,10 +24,8 @@
     //设置窗口
     self.window = [[UIWindow alloc] init];
     self.window.frame = [UIScreen mainScreen].bounds;
-    
-    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *path = [doc  stringByAppendingString:@"account.archive"];
-    HMAcountModel *account = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    //利用HMAccountTool工具拿到账号信息 为空则为过期账号
+    HMAcountModel *account = [HMAccountTool account];
     if (account) {//说明之前授权过
         //从本地读取版本号
         NSString *key = @"CFBundleVersion";

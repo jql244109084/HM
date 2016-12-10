@@ -14,18 +14,22 @@
     account.expires_in = dict[@"expires_in"];
     account.access_token = dict[@"access_token"];
     account.uid = dict[@"uid"];
+    //存储模型的时候 就拿到了access_token的创建时间
+    account.create_time = [NSDate date];
     return account;
 }
 - (void)encodeWithCoder:(NSCoder *)encoder {
     [encoder encodeObject:self.access_token forKey:@"access_token"];
     [encoder encodeObject:self.expires_in forKey:@"expires_in"];
     [encoder encodeObject:self.uid forKey:@"uid"];
+    [encoder encodeObject:self.create_time forKey:@"create_time"];
 }
 - (instancetype)initWithCoder:(NSCoder *)decoder {
     if (self = [super init]) {
         self.access_token = [decoder decodeObjectForKey:@"access_token"];
         self.expires_in = [decoder decodeObjectForKey:@"expires_in"];
         self.uid = [decoder decodeObjectForKey:@"uid"];
+        self.create_time = [decoder decodeObjectForKey:@"create_time"];
     }
     return self;
 }

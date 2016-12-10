@@ -23,7 +23,6 @@
 		61702A301CCB5B17002E15A5 /* HMProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61702A231CCB5B17002E15A5 /* HMProfileTableViewController.m */; };
 		61702A331CCB6C70002E15A5 /* UIBarButtonItem+HMBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 61702A321CCB6C70002E15A5 /* UIBarButtonItem+HMBarButtonItem.m */; };
 		61702A3A1CCB921D002E15A5 /* HMSeatchBarTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 61702A391CCB921D002E15A5 /* HMSeatchBarTextField.m */; };
-		617C477D1DFAD8EB00F51207 /* HMOauthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 617C477C1DFAD8EB00F51207 /* HMOauthViewController.m */; };
 		617C47921DFB98CC00F51207 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 617C47801DFB98CC00F51207 /* AFHTTPRequestOperation.m */; };
 		617C47931DFB98CC00F51207 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 617C47821DFB98CC00F51207 /* AFHTTPRequestOperationManager.m */; };
 		617C47941DFB98CC00F51207 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 617C47841DFB98CC00F51207 /* AFHTTPSessionManager.m */; };
@@ -33,7 +32,9 @@
 		617C47981DFB98CC00F51207 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 617C478D1DFB98CC00F51207 /* AFURLRequestSerialization.m */; };
 		617C47991DFB98CC00F51207 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 617C478F1DFB98CC00F51207 /* AFURLResponseSerialization.m */; };
 		617C479A1DFB98CC00F51207 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 617C47911DFB98CC00F51207 /* AFURLSessionManager.m */; };
-		618A0FAC1DFC202E00D62CD3 /* HMAcountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 618A0FAB1DFC202E00D62CD3 /* HMAcountModel.m */; };
+		6187F5A31DFC54B200CB9CC7 /* HMAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6187F59D1DFC54B200CB9CC7 /* HMAccountTool.m */; };
+		6187F5A41DFC54B200CB9CC7 /* HMAcountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6187F5A01DFC54B200CB9CC7 /* HMAcountModel.m */; };
+		6187F5A51DFC54B200CB9CC7 /* HMOauthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6187F5A21DFC54B200CB9CC7 /* HMOauthViewController.m */; };
 		618A0FB31DFC318500D62CD3 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 618A0FAF1DFC318500D62CD3 /* MBProgressHUD+MJ.m */; };
 		618A0FB41DFC318500D62CD3 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 618A0FB01DFC318500D62CD3 /* MBProgressHUD.bundle */; };
 		618A0FB51DFC318500D62CD3 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 618A0FB21DFC318500D62CD3 /* MBProgressHUD.m */; };
@@ -93,8 +94,6 @@
 		61702A321CCB6C70002E15A5 /* UIBarButtonItem+HMBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+HMBarButtonItem.m"; path = "../Other/UIBarButtonItem+HMBarButtonItem.m"; sourceTree = "<group>"; };
 		61702A381CCB921D002E15A5 /* HMSeatchBarTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSeatchBarTextField.h; sourceTree = "<group>"; };
 		61702A391CCB921D002E15A5 /* HMSeatchBarTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSeatchBarTextField.m; sourceTree = "<group>"; };
-		617C477B1DFAD8EB00F51207 /* HMOauthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMOauthViewController.h; sourceTree = "<group>"; };
-		617C477C1DFAD8EB00F51207 /* HMOauthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMOauthViewController.m; sourceTree = "<group>"; };
 		617C477F1DFB98CC00F51207 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		617C47801DFB98CC00F51207 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		617C47811DFB98CC00F51207 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -114,8 +113,12 @@
 		617C478F1DFB98CC00F51207 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		617C47901DFB98CC00F51207 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		617C47911DFB98CC00F51207 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
-		618A0FAA1DFC202E00D62CD3 /* HMAcountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAcountModel.h; sourceTree = "<group>"; };
-		618A0FAB1DFC202E00D62CD3 /* HMAcountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAcountModel.m; sourceTree = "<group>"; };
+		6187F59C1DFC54B200CB9CC7 /* HMAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAccountTool.h; sourceTree = "<group>"; };
+		6187F59D1DFC54B200CB9CC7 /* HMAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAccountTool.m; sourceTree = "<group>"; };
+		6187F59F1DFC54B200CB9CC7 /* HMAcountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAcountModel.h; sourceTree = "<group>"; };
+		6187F5A01DFC54B200CB9CC7 /* HMAcountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAcountModel.m; sourceTree = "<group>"; };
+		6187F5A11DFC54B200CB9CC7 /* HMOauthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMOauthViewController.h; sourceTree = "<group>"; };
+		6187F5A21DFC54B200CB9CC7 /* HMOauthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMOauthViewController.m; sourceTree = "<group>"; };
 		618A0FAE1DFC318500D62CD3 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
 		618A0FAF1DFC318500D62CD3 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
 		618A0FB01DFC318500D62CD3 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -170,8 +173,7 @@
 		617029FB1CCB5B17002E15A5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				618A0FA91DFC201900D62CD3 /* AcountModel */,
-				617C477A1DFAD8CC00F51207 /* Oauth */,
+				6187F59A1DFC54B200CB9CC7 /* Oauth */,
 				6117B08A1CD0F14A00C764CF /* NewFuture */,
 				617029FC1CCB5B17002E15A5 /* Discover */,
 				61702A021CCB5B17002E15A5 /* Home */,
@@ -384,15 +386,6 @@
 			path = view;
 			sourceTree = "<group>";
 		};
-		617C477A1DFAD8CC00F51207 /* Oauth */ = {
-			isa = PBXGroup;
-			children = (
-				617C477B1DFAD8EB00F51207 /* HMOauthViewController.h */,
-				617C477C1DFAD8EB00F51207 /* HMOauthViewController.m */,
-			);
-			path = Oauth;
-			sourceTree = "<group>";
-		};
 		617C477E1DFB98CC00F51207 /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -419,11 +412,31 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
-		618A0FA91DFC201900D62CD3 /* AcountModel */ = {
+		6187F59A1DFC54B200CB9CC7 /* Oauth */ = {
 			isa = PBXGroup;
 			children = (
-				618A0FAA1DFC202E00D62CD3 /* HMAcountModel.h */,
-				618A0FAB1DFC202E00D62CD3 /* HMAcountModel.m */,
+				6187F59B1DFC54B200CB9CC7 /* AccountTool */,
+				6187F59E1DFC54B200CB9CC7 /* AcountModel */,
+				6187F5A11DFC54B200CB9CC7 /* HMOauthViewController.h */,
+				6187F5A21DFC54B200CB9CC7 /* HMOauthViewController.m */,
+			);
+			path = Oauth;
+			sourceTree = "<group>";
+		};
+		6187F59B1DFC54B200CB9CC7 /* AccountTool */ = {
+			isa = PBXGroup;
+			children = (
+				6187F59C1DFC54B200CB9CC7 /* HMAccountTool.h */,
+				6187F59D1DFC54B200CB9CC7 /* HMAccountTool.m */,
+			);
+			path = AccountTool;
+			sourceTree = "<group>";
+		};
+		6187F59E1DFC54B200CB9CC7 /* AcountModel */ = {
+			isa = PBXGroup;
+			children = (
+				6187F59F1DFC54B200CB9CC7 /* HMAcountModel.h */,
+				6187F5A01DFC54B200CB9CC7 /* HMAcountModel.m */,
 			);
 			path = AcountModel;
 			sourceTree = "<group>";
@@ -641,12 +654,14 @@
 				618A0FB51DFC318500D62CD3 /* MBProgressHUD.m in Sources */,
 				617C47941DFB98CC00F51207 /* AFHTTPSessionManager.m in Sources */,
 				61702A301CCB5B17002E15A5 /* HMProfileTableViewController.m in Sources */,
+				6187F5A51DFC54B200CB9CC7 /* HMOauthViewController.m in Sources */,
 				614ED37D1CCC71CE001EE125 /* HMMenu.m in Sources */,
 				617C47951DFB98CC00F51207 /* AFNetworkReachabilityManager.m in Sources */,
 				617C479A1DFB98CC00F51207 /* AFURLSessionManager.m in Sources */,
+				6187F5A31DFC54B200CB9CC7 /* HMAccountTool.m in Sources */,
 				61702A261CCB5B17002E15A5 /* HMDiscoverTableViewController.m in Sources */,
-				618A0FAC1DFC202E00D62CD3 /* HMAcountModel.m in Sources */,
 				61702A271CCB5B17002E15A5 /* HMHomeTableViewController.m in Sources */,
+				6187F5A41DFC54B200CB9CC7 /* HMAcountModel.m in Sources */,
 				617C47971DFB98CC00F51207 /* AFURLConnectionOperation.m in Sources */,
 				617C47991DFB98CC00F51207 /* AFURLResponseSerialization.m in Sources */,
 				6152C3E81CCE300E00305E59 /* HMTabBar.m in Sources */,
@@ -654,7 +669,6 @@
 				61702A2C1CCB5B17002E15A5 /* main.m in Sources */,
 				61702A2A1CCB5B17002E15A5 /* HMNavigationViewController.m in Sources */,
 				61702A331CCB6C70002E15A5 /* UIBarButtonItem+HMBarButtonItem.m in Sources */,
-				617C477D1DFAD8EB00F51207 /* HMOauthViewController.m in Sources */,
 				61702A2D1CCB5B17002E15A5 /* HMTest1ViewController.m in Sources */,
 				617C47931DFB98CC00F51207 /* AFHTTPRequestOperationManager.m in Sources */,
 				617C47961DFB98CC00F51207 /* AFSecurityPolicy.m in Sources */,

@@ -12,6 +12,7 @@
 #import "HMTabBarViewController.h"
 #import "HMAcountModel.h"
 #import "MBProgressHUD+MJ.h"
+#import "HMAccountTool.h"
 
 @interface HMOauthViewController () <UIWebViewDelegate>
 
@@ -85,18 +86,14 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager POST:@"https://api.weibo.com/oauth2/access_token" parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, NSDictionary   * _Nonnull responseObject) {
         [MBProgressHUD hideHUD];
-        NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-        NSString *path = [doc  stringByAppendingString:@"account.archive"];
         HMAcountModel *account = [HMAcountModel accountWithDictionary:responseObject];
-        //存储自定义的model 归档
-        [NSKeyedArchiver archiveRootObject:account toFile:path];
-        
-        
+        //存储自定义的model
+        [HMAccountTool saveAccount:account];
+
         UIWindow *window = [UIApplication sharedApplication].keyWindow;
         //从本地读取版本号
         NSString *key = @"CFBundleVersion";
         NSString *lastBundleVersion = [[NSUserDefaults standardUserDefaults] objectForKey:key];
-       
         //从plist中读取版本号 升级的时候新特性显示
         NSDictionary *plistDict = [NSBundle mainBundle].infoDictionary;
         NSString *bundleVersion = plistDict[key];
@@ -110,7 +107,6 @@
             //存储
             [[NSUserDefaults standardUserDefaults] setObject:bundleVersion forKey:key];
         }
-        
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         HMLog(@"-%@",error);
         [MBProgressHUD hideHUD];
