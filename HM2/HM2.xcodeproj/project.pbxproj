@@ -33,6 +33,7 @@
 		617C47981DFB98CC00F51207 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 617C478D1DFB98CC00F51207 /* AFURLRequestSerialization.m */; };
 		617C47991DFB98CC00F51207 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 617C478F1DFB98CC00F51207 /* AFURLResponseSerialization.m */; };
 		617C479A1DFB98CC00F51207 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 617C47911DFB98CC00F51207 /* AFURLSessionManager.m */; };
+		618A0FAC1DFC202E00D62CD3 /* HMAcountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 618A0FAB1DFC202E00D62CD3 /* HMAcountModel.m */; };
 		6918A7321CC71BBE009B2A11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6918A7311CC71BBE009B2A11 /* Assets.xcassets */; };
 		6918A7351CC71BBE009B2A11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6918A7331CC71BBE009B2A11 /* LaunchScreen.storyboard */; };
 		6918A7401CC71BBE009B2A11 /* HM2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6918A73F1CC71BBE009B2A11 /* HM2Tests.m */; };
@@ -110,6 +111,8 @@
 		617C478F1DFB98CC00F51207 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		617C47901DFB98CC00F51207 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		617C47911DFB98CC00F51207 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		618A0FAA1DFC202E00D62CD3 /* HMAcountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAcountModel.h; sourceTree = "<group>"; };
+		618A0FAB1DFC202E00D62CD3 /* HMAcountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAcountModel.m; sourceTree = "<group>"; };
 		6918A7221CC71BBE009B2A11 /* HM2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HM2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6918A7311CC71BBE009B2A11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6918A7341CC71BBE009B2A11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -159,6 +162,7 @@
 		617029FB1CCB5B17002E15A5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				618A0FA91DFC201900D62CD3 /* AcountModel */,
 				617C477A1DFAD8CC00F51207 /* Oauth */,
 				6117B08A1CD0F14A00C764CF /* NewFuture */,
 				617029FC1CCB5B17002E15A5 /* Discover */,
@@ -406,6 +410,15 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		618A0FA91DFC201900D62CD3 /* AcountModel */ = {
+			isa = PBXGroup;
+			children = (
+				618A0FAA1DFC202E00D62CD3 /* HMAcountModel.h */,
+				618A0FAB1DFC202E00D62CD3 /* HMAcountModel.m */,
+			);
+			path = AcountModel;
+			sourceTree = "<group>";
+		};
 		6918A7191CC71BBE009B2A11 = {
 			isa = PBXGroup;
 			children = (
@@ -608,6 +621,7 @@
 				617C47951DFB98CC00F51207 /* AFNetworkReachabilityManager.m in Sources */,
 				617C479A1DFB98CC00F51207 /* AFURLSessionManager.m in Sources */,
 				61702A261CCB5B17002E15A5 /* HMDiscoverTableViewController.m in Sources */,
+				618A0FAC1DFC202E00D62CD3 /* HMAcountModel.m in Sources */,
 				61702A271CCB5B17002E15A5 /* HMHomeTableViewController.m in Sources */,
 				617C47971DFB98CC00F51207 /* AFURLConnectionOperation.m in Sources */,
 				617C47991DFB98CC00F51207 /* AFURLResponseSerialization.m in Sources */,
