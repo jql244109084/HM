@@ -11,6 +11,7 @@
 #import "HMNewFutureViewController.h"
 #import "HMTabBarViewController.h"
 #import "HMAcountModel.h"
+#import "MBProgressHUD+MJ.h"
 
 @interface HMOauthViewController () <UIWebViewDelegate>
 
@@ -40,10 +41,16 @@
 #pragma mark - webView的代理
 - (void)webViewDidStartLoad:(UIWebView *)webView {
 //    HMLog(@"%s",__func__);
+    [MBProgressHUD showMessage:@"加载中..."];
     
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
 //    HMLog(@"%s",__func__);
+    [MBProgressHUD hideHUD];
+    
+}
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    [MBProgressHUD hideHUD];
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
@@ -54,6 +61,7 @@
         NSUInteger fromIndex = range.location + range.length;
         NSString *code = [url substringFromIndex:fromIndex];
         [self getAceessToken:code];
+        return NO;//返回no 即不在加载页面
     }
     return YES;
 }
@@ -76,7 +84,7 @@
     params[@"redirect_uri"] = @"http://";
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager POST:@"https://api.weibo.com/oauth2/access_token" parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, NSDictionary   * _Nonnull responseObject) {
-        NSLog(@"--%@",responseObject);
+        [MBProgressHUD hideHUD];
         NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
         NSString *path = [doc  stringByAppendingString:@"account.archive"];
         HMAcountModel *account = [HMAcountModel accountWithDictionary:responseObject];
@@ -105,9 +113,10 @@
         
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         HMLog(@"-%@",error);
+        [MBProgressHUD hideHUD];
+
     }];
-    
-    
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
