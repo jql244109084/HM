@@ -13,7 +13,6 @@
 #define AccountPath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]  stringByAppendingString:@"account.archive"]
 
 #import "HMAccountTool.h"
-#import "HMAcountModel.h"
 
 @implementation HMAccountTool
 + (void)saveAccount:(HMAcountModel *)account {

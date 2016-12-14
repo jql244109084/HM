@@ -15,6 +15,10 @@
 @property (nonatomic,copy) NSNumber *expires_in;
 /**授权用户的UID，本字段只是为了方便开发者，减少一次user/show接口调用而返回的，第三方应用不能用此字段作为用户登录状态的识别，只有access_token才是用户授权的唯一票据。*/
 @property (nonatomic,copy) NSString *uid;
+/**创建时间*/
 @property (nonatomic,strong) NSDate *create_time;
+/**用户名称*/
+@property (nonatomic,copy) NSString *name;
+
 + (instancetype)accountWithDictionary:(NSDictionary *)dict;
 @end

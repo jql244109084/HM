@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-@class HMAcountModel;
+#import "HMAcountModel.h"
 
 @interface HMAccountTool : NSObject
 /**
  *  @author JqlLove
  *  存储账号信息
- *  @param account <#account description#>
+ *  @param account
  */
 + (void)saveAccount:(HMAcountModel *)account;
 + (HMAcountModel *)account;

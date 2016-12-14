@@ -32,12 +32,15 @@
 		617C47981DFB98CC00F51207 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 617C478D1DFB98CC00F51207 /* AFURLRequestSerialization.m */; };
 		617C47991DFB98CC00F51207 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 617C478F1DFB98CC00F51207 /* AFURLResponseSerialization.m */; };
 		617C479A1DFB98CC00F51207 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 617C47911DFB98CC00F51207 /* AFURLSessionManager.m */; };
+		618104381DFD1636000630A8 /* UIWindow+HMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 618104371DFD1636000630A8 /* UIWindow+HMExtension.m */; };
+		6181043A1DFD966D000630A8 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 618104391DFD966D000630A8 /* Foundation+Log.m */; };
 		6187F5A31DFC54B200CB9CC7 /* HMAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6187F59D1DFC54B200CB9CC7 /* HMAccountTool.m */; };
 		6187F5A41DFC54B200CB9CC7 /* HMAcountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6187F5A01DFC54B200CB9CC7 /* HMAcountModel.m */; };
 		6187F5A51DFC54B200CB9CC7 /* HMOauthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6187F5A21DFC54B200CB9CC7 /* HMOauthViewController.m */; };
 		618A0FB31DFC318500D62CD3 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 618A0FAF1DFC318500D62CD3 /* MBProgressHUD+MJ.m */; };
 		618A0FB41DFC318500D62CD3 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 618A0FB01DFC318500D62CD3 /* MBProgressHUD.bundle */; };
 		618A0FB51DFC318500D62CD3 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 618A0FB21DFC318500D62CD3 /* MBProgressHUD.m */; };
+		61EA10B41E00375E007E25A7 /* HMMyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 61EA10B31E00375E007E25A7 /* HMMyButton.m */; };
 		6918A7321CC71BBE009B2A11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6918A7311CC71BBE009B2A11 /* Assets.xcassets */; };
 		6918A7351CC71BBE009B2A11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6918A7331CC71BBE009B2A11 /* LaunchScreen.storyboard */; };
 		6918A7401CC71BBE009B2A11 /* HM2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6918A73F1CC71BBE009B2A11 /* HM2Tests.m */; };
@@ -113,6 +116,9 @@
 		617C478F1DFB98CC00F51207 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		617C47901DFB98CC00F51207 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		617C47911DFB98CC00F51207 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		618104361DFD1636000630A8 /* UIWindow+HMExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+HMExtension.h"; sourceTree = "<group>"; };
+		618104371DFD1636000630A8 /* UIWindow+HMExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+HMExtension.m"; sourceTree = "<group>"; };
+		618104391DFD966D000630A8 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		6187F59C1DFC54B200CB9CC7 /* HMAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAccountTool.h; sourceTree = "<group>"; };
 		6187F59D1DFC54B200CB9CC7 /* HMAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAccountTool.m; sourceTree = "<group>"; };
 		6187F59F1DFC54B200CB9CC7 /* HMAcountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAcountModel.h; sourceTree = "<group>"; };
@@ -124,6 +130,8 @@
 		618A0FB01DFC318500D62CD3 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		618A0FB11DFC318500D62CD3 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		618A0FB21DFC318500D62CD3 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		61EA10B21E00375E007E25A7 /* HMMyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMyButton.h; sourceTree = "<group>"; };
+		61EA10B31E00375E007E25A7 /* HMMyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMyButton.m; sourceTree = "<group>"; };
 		6918A7221CC71BBE009B2A11 /* HM2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HM2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6918A7311CC71BBE009B2A11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6918A7341CC71BBE009B2A11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -248,6 +256,8 @@
 			children = (
 				614ED37B1CCC71CE001EE125 /* HMMenu.h */,
 				614ED37C1CCC71CE001EE125 /* HMMenu.m */,
+				61EA10B21E00375E007E25A7 /* HMMyButton.h */,
+				61EA10B31E00375E007E25A7 /* HMMyButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -267,10 +277,13 @@
 		61702A091CCB5B17002E15A5 /* Catogra */ = {
 			isa = PBXGroup;
 			children = (
+				618104391DFD966D000630A8 /* Foundation+Log.m */,
 				61702A0A1CCB5B17002E15A5 /* UIView+HMExtention.h */,
 				61702A0B1CCB5B17002E15A5 /* UIView+HMExtention.m */,
 				61702A311CCB6C70002E15A5 /* UIBarButtonItem+HMBarButtonItem.h */,
 				61702A321CCB6C70002E15A5 /* UIBarButtonItem+HMBarButtonItem.m */,
+				618104361DFD1636000630A8 /* UIWindow+HMExtension.h */,
+				618104371DFD1636000630A8 /* UIWindow+HMExtension.m */,
 			);
 			path = Catogra;
 			sourceTree = "<group>";
@@ -658,9 +671,11 @@
 				614ED37D1CCC71CE001EE125 /* HMMenu.m in Sources */,
 				617C47951DFB98CC00F51207 /* AFNetworkReachabilityManager.m in Sources */,
 				617C479A1DFB98CC00F51207 /* AFURLSessionManager.m in Sources */,
+				6181043A1DFD966D000630A8 /* Foundation+Log.m in Sources */,
 				6187F5A31DFC54B200CB9CC7 /* HMAccountTool.m in Sources */,
 				61702A261CCB5B17002E15A5 /* HMDiscoverTableViewController.m in Sources */,
 				61702A271CCB5B17002E15A5 /* HMHomeTableViewController.m in Sources */,
+				618104381DFD1636000630A8 /* UIWindow+HMExtension.m in Sources */,
 				6187F5A41DFC54B200CB9CC7 /* HMAcountModel.m in Sources */,
 				617C47971DFB98CC00F51207 /* AFURLConnectionOperation.m in Sources */,
 				617C47991DFB98CC00F51207 /* AFURLResponseSerialization.m in Sources */,
@@ -670,6 +685,7 @@
 				61702A2A1CCB5B17002E15A5 /* HMNavigationViewController.m in Sources */,
 				61702A331CCB6C70002E15A5 /* UIBarButtonItem+HMBarButtonItem.m in Sources */,
 				61702A2D1CCB5B17002E15A5 /* HMTest1ViewController.m in Sources */,
+				61EA10B41E00375E007E25A7 /* HMMyButton.m in Sources */,
 				617C47931DFB98CC00F51207 /* AFHTTPRequestOperationManager.m in Sources */,
 				617C47961DFB98CC00F51207 /* AFSecurityPolicy.m in Sources */,
 				6117B08D1CD0F19E00C764CF /* HMNewFutureViewController.m in Sources */,

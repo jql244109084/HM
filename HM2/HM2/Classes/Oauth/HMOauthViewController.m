@@ -89,24 +89,9 @@
         HMAcountModel *account = [HMAcountModel accountWithDictionary:responseObject];
         //存储自定义的model
         [HMAccountTool saveAccount:account];
-
+        
         UIWindow *window = [UIApplication sharedApplication].keyWindow;
-        //从本地读取版本号
-        NSString *key = @"CFBundleVersion";
-        NSString *lastBundleVersion = [[NSUserDefaults standardUserDefaults] objectForKey:key];
-        //从plist中读取版本号 升级的时候新特性显示
-        NSDictionary *plistDict = [NSBundle mainBundle].infoDictionary;
-        NSString *bundleVersion = plistDict[key];
-        if ([lastBundleVersion isEqualToString:bundleVersion]) {
-            //设置窗口的跟控制器
-            HMTabBarViewController *rootController = [[HMTabBarViewController alloc] init];
-            window.rootViewController = rootController;
-        }else{//不想等就不是同一个版本
-            HMNewFutureViewController *newFuture = [[HMNewFutureViewController alloc] init];
-            window.rootViewController = newFuture;
-            //存储
-            [[NSUserDefaults standardUserDefaults] setObject:bundleVersion forKey:key];
-        }
+        [window switchWindowRootController];
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         HMLog(@"-%@",error);
         [MBProgressHUD hideHUD];
