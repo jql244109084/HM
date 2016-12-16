@@ -12,8 +12,10 @@
 #import "AFNetworking.h"
 #import "HMAccountTool.h"
 #import "HMMyButton.h"
+#import "UIImageView+WebCache.h"
 
 @interface HMHomeTableViewController ()<HMMenuDelegate>
+@property (nonatomic, strong) NSArray *statuses;
 
 @end
 
@@ -25,7 +27,27 @@
     [self setUpNav];
     //获取用户信息
     [self getUserInfo];
+    //获取用户微博信息
+    [self getUserStatuses];
     
+}
+- (void)getUserStatuses {
+    //1.获取账户信息
+    HMAcountModel *account = [HMAccountTool account];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = account.access_token;
+   // params[@"count"] = @"1";
+    //2.发送请求
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSLog(@"---%@",responseObject);
+        self.statuses = responseObject[@"statuses"];
+        [self.tableView reloadData];
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        HMLog(@"-%@",error);
+    }];
+
 }
 /**
  *  @author JqlLove
@@ -84,10 +106,6 @@
     HMMenu *dropMenu = [[HMMenu alloc] init];
     dropMenu.delegate = self;
     [dropMenu showFrom:button];
-    
-    
-
-    
 }
 #pragma mark －菜单的代理方法
 /**
@@ -123,17 +141,28 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    
-    return 0;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.statuses.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    NSDictionary *status = self.statuses[indexPath.row];
+    NSDictionary *user = status[@"user"];
+    
+    static NSString *ID = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
+    }    cell.detailTextLabel.text = user[@"text"];
+    
+    cell.textLabel.text = user[@"name"] ;
+    cell.detailTextLabel.text = status[@"text"];
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:user[@"profile_image_url"]] placeholderImage:[UIImage imageNamed:@"avatar_default"]];
+    return cell;
 }
 
 @end

@@ -26,6 +26,7 @@
     [encoder encodeObject:self.name forKey:@"name"];
 
 }
+
 - (instancetype)initWithCoder:(NSCoder *)decoder {
     if (self = [super init]) {
         self.access_token = [decoder decodeObjectForKey:@"access_token"];

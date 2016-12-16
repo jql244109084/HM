@@ -35,7 +35,9 @@
     
     // 遍历数组的所有元素
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        
         [str appendFormat:@"%@,\n", obj];
+        
     }];
     
     [str appendString:@"]"];
