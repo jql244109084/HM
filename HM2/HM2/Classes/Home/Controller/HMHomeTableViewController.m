@@ -4,7 +4,7 @@
 //
 //  Created by 焦起龙 on 16/4/22.
 //  Copyright © 2016年 JqlLove. All rights reserved.
-//
+// 
 
 #import "HMHomeTableViewController.h"
 #import "UIBarButtonItem+HMBarButtonItem.h"
@@ -13,41 +13,63 @@
 #import "HMAccountTool.h"
 #import "HMMyButton.h"
 #import "UIImageView+WebCache.h"
+#import "HMUser.h"
+#import "HMStatus.h"
+#import "MJExtension.h"
 
 @interface HMHomeTableViewController ()<HMMenuDelegate>
-@property (nonatomic, strong) NSArray *statuses;
+@property (nonatomic, strong) NSMutableArray *statuses;
 
 @end
 
 @implementation HMHomeTableViewController
 
+-(NSMutableArray *)statuses {
+    if (!_statuses) {
+        _statuses = [NSMutableArray array];
+    }
+    return _statuses;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     //设置导航栏
     [self setUpNav];
     //获取用户信息
     [self getUserInfo];
-    //获取用户微博信息
-    [self getUserStatuses];
+    //下啦刷新
+    [self statusesRefresh];
     
 }
-- (void)getUserStatuses {
+- (void)statusesRefresh {
+    UIRefreshControl *control = [[UIRefreshControl alloc] init];
+    [control addTarget:self action:@selector(controlResfresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:control];
+}
+- (void)controlResfresh:(UIRefreshControl *)control {
+    //那到原来数组中的第一个微博信息
+    HMStatus *status = [_statuses firstObject];
     //1.获取账户信息
     HMAcountModel *account = [HMAccountTool account];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = account.access_token;
-   // params[@"count"] = @"1";
+    if (status) {
+        params[@"since_id"] = status.idstr;
+    }
     //2.发送请求
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        
-        NSLog(@"---%@",responseObject);
-        self.statuses = responseObject[@"statuses"];
+        //1.字典数组转为模型数组
+        NSArray *newStatusArray = [HMStatus objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        //2.将数组中的模型插入到属性数组的最前面
+        NSRange range = NSMakeRange(0, newStatusArray.count);
+        NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:range];
+        [self.statuses insertObjects:newStatusArray atIndexes:set];
         [self.tableView reloadData];
+        [control endRefreshing];
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        [control endRefreshing];
         HMLog(@"-%@",error);
     }];
-
 }
 /**
  *  @author JqlLove
@@ -149,19 +171,18 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
-    NSDictionary *status = self.statuses[indexPath.row];
-    NSDictionary *user = status[@"user"];
+    HMStatus *status = self.statuses[indexPath.row];
+    HMUser *user = status.user;
     
     static NSString *ID = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-    }    cell.detailTextLabel.text = user[@"text"];
-    
-    cell.textLabel.text = user[@"name"] ;
-    cell.detailTextLabel.text = status[@"text"];
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:user[@"profile_image_url"]] placeholderImage:[UIImage imageNamed:@"avatar_default"]];
+    }
+    cell.textLabel.text = user.name;
+    cell.detailTextLabel.text = status.text;
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:user.profile_image_url] placeholderImage:[UIImage imageNamed:@"avatar_default"]];
     return cell;
 }
 
