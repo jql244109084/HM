@@ -18,4 +18,7 @@
 /**	string	用户头像地址，50×50像素*/
 @property (nonatomic, copy) NSString *profile_image_url;
 
+/**	string	用户大头像地址*/
+@property (nonatomic,copy) NSString *avatar_large;
+
 @end

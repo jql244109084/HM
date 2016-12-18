@@ -53,6 +53,10 @@
 		61CDE3D01E054CDC0040BCEF /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CDE3C31E054CDC0040BCEF /* NSObject+MJCoding.m */; };
 		61CDE3D11E054CDC0040BCEF /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CDE3C51E054CDC0040BCEF /* NSObject+MJKeyValue.m */; };
 		61CDE3D21E054CDC0040BCEF /* NSObject+MJMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CDE3C71E054CDC0040BCEF /* NSObject+MJMember.m */; };
+		61CDE3ED1E0699AB0040BCEF /* HMLoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CDE3E81E0699AB0040BCEF /* HMLoadMoreFooter.m */; };
+		61CDE3EE1E0699AB0040BCEF /* HMLoadMoreFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61CDE3E91E0699AB0040BCEF /* HMLoadMoreFooter.xib */; };
+		61CDE3F41E069A280040BCEF /* HWLoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CDE3F21E069A280040BCEF /* HWLoadMoreFooter.m */; };
+		61CDE3F51E069A280040BCEF /* HWLoadMoreFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61CDE3F31E069A280040BCEF /* HWLoadMoreFooter.xib */; };
 		61EA10B41E00375E007E25A7 /* HMMyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 61EA10B31E00375E007E25A7 /* HMMyButton.m */; };
 		6918A7321CC71BBE009B2A11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6918A7311CC71BBE009B2A11 /* Assets.xcassets */; };
 		6918A7351CC71BBE009B2A11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6918A7331CC71BBE009B2A11 /* LaunchScreen.storyboard */; };
@@ -186,6 +190,12 @@
 		61CDE3C51E054CDC0040BCEF /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
 		61CDE3C61E054CDC0040BCEF /* NSObject+MJMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJMember.h"; sourceTree = "<group>"; };
 		61CDE3C71E054CDC0040BCEF /* NSObject+MJMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJMember.m"; sourceTree = "<group>"; };
+		61CDE3E71E0699AB0040BCEF /* HMLoadMoreFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLoadMoreFooter.h; sourceTree = "<group>"; };
+		61CDE3E81E0699AB0040BCEF /* HMLoadMoreFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLoadMoreFooter.m; sourceTree = "<group>"; };
+		61CDE3E91E0699AB0040BCEF /* HMLoadMoreFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMLoadMoreFooter.xib; sourceTree = "<group>"; };
+		61CDE3F11E069A280040BCEF /* HWLoadMoreFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWLoadMoreFooter.h; sourceTree = "<group>"; };
+		61CDE3F21E069A280040BCEF /* HWLoadMoreFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWLoadMoreFooter.m; sourceTree = "<group>"; };
+		61CDE3F31E069A280040BCEF /* HWLoadMoreFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWLoadMoreFooter.xib; sourceTree = "<group>"; };
 		61EA10B21E00375E007E25A7 /* HMMyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMyButton.h; sourceTree = "<group>"; };
 		61EA10B31E00375E007E25A7 /* HMMyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMyButton.m; sourceTree = "<group>"; };
 		6918A7221CC71BBE009B2A11 /* HM2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HM2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -336,6 +346,12 @@
 		61702A071CCB5B17002E15A5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				61CDE3F11E069A280040BCEF /* HWLoadMoreFooter.h */,
+				61CDE3F21E069A280040BCEF /* HWLoadMoreFooter.m */,
+				61CDE3F31E069A280040BCEF /* HWLoadMoreFooter.xib */,
+				61CDE3E71E0699AB0040BCEF /* HMLoadMoreFooter.h */,
+				61CDE3E81E0699AB0040BCEF /* HMLoadMoreFooter.m */,
+				61CDE3E91E0699AB0040BCEF /* HMLoadMoreFooter.xib */,
 				614ED37B1CCC71CE001EE125 /* HMMenu.h */,
 				614ED37C1CCC71CE001EE125 /* HMMenu.m */,
 				61EA10B21E00375E007E25A7 /* HMMyButton.h */,
@@ -794,7 +810,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61CDE3EE1E0699AB0040BCEF /* HMLoadMoreFooter.xib in Resources */,
 				6918A7351CC71BBE009B2A11 /* LaunchScreen.storyboard in Resources */,
+				61CDE3F51E069A280040BCEF /* HWLoadMoreFooter.xib in Resources */,
 				6918A7321CC71BBE009B2A11 /* Assets.xcassets in Resources */,
 				618A0FB41DFC318500D62CD3 /* MBProgressHUD.bundle in Resources */,
 			);
@@ -835,6 +853,8 @@
 				9AAED36D1E03857200FA9E66 /* UIImage+MultiFormat.m in Sources */,
 				61CDE3C81E054CDC0040BCEF /* MJArgument.m in Sources */,
 				61702A3A1CCB921D002E15A5 /* HMSeatchBarTextField.m in Sources */,
+				61CDE3F41E069A280040BCEF /* HWLoadMoreFooter.m in Sources */,
+				61CDE3ED1E0699AB0040BCEF /* HMLoadMoreFooter.m in Sources */,
 				9AAED3671E03857200FA9E66 /* SDWebImageDownloader.m in Sources */,
 				61702A2F1CCB5B17002E15A5 /* HMMessageTableViewController.m in Sources */,
 				9AAED36E1E03857200FA9E66 /* UIImage+WebP.m in Sources */,
