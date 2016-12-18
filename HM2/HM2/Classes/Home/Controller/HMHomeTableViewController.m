@@ -44,6 +44,33 @@
     [self statusesRefresh];
     //上拉刷新
     [self statusesuUpRefresh];
+     //获取未读微博数量
+    NSTimer *timer= [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(setUpUnreadCount) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+    
+}
+- (void)setUpUnreadCount {
+    
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    // 2.拼接请求参数
+    HMAcountModel *account = [HMAccountTool account];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = account.access_token;
+    params[@"uid"] = account.uid;
+    [mgr GET:@"https://rm.api.weibo.com/2/remind/unread_count.json" parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSString *status = [responseObject[@"status"] description];
+        if ([status isEqualToString:@"0"]) {
+            self.tabBarItem.badgeValue = status;
+            [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+        }else{
+            self.tabBarItem.badgeValue = status;
+            [UIApplication sharedApplication].applicationIconBadgeNumber = status.intValue;
+        }
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        HMLog(@"%@",error);
+        
+    }];
 }
 - (void)statusesuUpRefresh {
     HMLoadMoreFooter  *footer = [HMLoadMoreFooter footer];
