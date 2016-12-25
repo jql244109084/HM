@@ -48,8 +48,7 @@
     NSTimer *timer= [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(setUpUnreadCount) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
     
-}
-- (void)setUpUnreadCount {
+}- (void)setUpUnreadCount {
     
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
     
@@ -108,7 +107,7 @@
         [control endRefreshing];
         //显示加载数量
         [self showNewStatusCount:newStatus.count];
-        HMLog(@"-----%@", NSStringFromUIEdgeInsets(self.tableView.contentInset));
+//        HMLog(@"-----%@", NSStringFromUIEdgeInsets(self.tableView.contentInset));
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         [control endRefreshing];
         HMLog(@"-%@",error);
@@ -187,14 +186,11 @@
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTaget:self action:@selector(popMore) image:@"navigationbar_pop" heightImage:@"navigationbar_pop_highlighted"];
     
     /* 中间的标题按钮 */
-    HMMyButton  *titleButton = [[HMMyButton alloc] init];
-    titleButton.width =150;
-    titleButton.height = 30;
+    HMMyButton *titleButton = [[HMMyButton alloc] init];
     // 设置图片和文字
     NSString *name = [HMAccountTool account].name;
     [titleButton setTitle:name?name:@"首页" forState:UIControlStateNormal];
     // 监听标题点击
-    [titleButton sizeToFit];
     [titleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.titleView = titleButton;
 }
@@ -329,14 +325,11 @@
         
         // 结束刷新(隐藏footer)
         self.tableView.tableFooterView.hidden = YES;
-        [self.tableView setNeedsDisplay];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         HMLog(@"请求失败-%@", error);
         // 结束刷新
         self.tableView.tableFooterView.hidden = YES;
-        [self.tableView setNeedsDisplay];
     }];
 }
-
 
 @end
