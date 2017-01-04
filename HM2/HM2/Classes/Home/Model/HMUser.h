@@ -21,4 +21,10 @@
 /**	string	用户大头像地址*/
 @property (nonatomic,copy) NSString *avatar_large;
 
+/**	string	会员等级*/
+@property (nonatomic,assign) int mbrank;
+/**	string	会员类型*/
+@property (nonatomic,assign) int mbtype;
+
+@property (nonatomic,assign,getter=isVip) BOOL vip;
 @end

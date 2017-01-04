@@ -14,13 +14,13 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor redColor];
+        
         [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         self.titleLabel.font = [UIFont boldSystemFontOfSize:17];
         [self setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
         [self setImage:[UIImage imageNamed:@"navigationbar_arrow_up"] forState:UIControlStateSelected];
-        self.imageView.backgroundColor = [UIColor yellowColor];
-        self.titleLabel.backgroundColor = [UIColor blueColor];
+//        self.imageView.backgroundColor = [UIColor yellowColor];
+//        self.titleLabel.backgroundColor = [UIColor blueColor];
     }
     return self;
 }

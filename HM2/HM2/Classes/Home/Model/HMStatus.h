@@ -19,4 +19,25 @@
 /**	object	微博作者的用户信息字段 详细*/
 @property (nonatomic, strong) HMUser *user;
 
+/**	object	创建时间*/
+@property (nonatomic, copy) NSString *created_at;
+
+/**	object	微博的来源*/
+@property (nonatomic,copy) NSString *source;
+
+/**	object	配图数组*/
+@property (nonatomic,strong) NSArray *pic_urls;
+/** 转发微博*/
+@property (nonatomic,strong) HMStatus *retweeted_status;
+
+
+/**	int	转发数 */
+@property (nonatomic,assign) int reposts_count;
+/**	int	评论数 */
+@property (nonatomic,assign) int comments_count;
+/**	int	表态数 */
+@property (nonatomic,assign) int attitudes_count;
+
+
+
 @end

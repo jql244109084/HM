@@ -17,10 +17,13 @@
 #import "HMStatus.h"
 #import "MJExtension.h"
 #import "HMLoadMoreFooter.h"
-#import "HWLoadMoreFooter.h"
+#import "HMStatusFrame.h"
+#import "HMStatusCell.h"
 
 @interface HMHomeTableViewController ()<HMMenuDelegate,UITableViewDataSource>
-@property (nonatomic, strong) NSMutableArray *statuses;
+@property (nonatomic, strong) NSMutableArray *status;
+@property (nonatomic, strong) NSMutableArray *statusF;
+
 
 @property (nonatomic,assign) BOOL requsetReturn;
 
@@ -28,14 +31,22 @@
 
 @implementation HMHomeTableViewController
 
--(NSMutableArray *)statuses {
-    if (!_statuses) {
-        _statuses = [NSMutableArray array];
+- (NSMutableArray *)status {
+    if (!_status) {
+        _status = [NSMutableArray array];
     }
-    return _statuses;
+    return _status;
 }
+- (NSMutableArray *)statusF {
+    if (!_statusF) {
+        _statusF = [NSMutableArray array];
+    }
+    return _statusF;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.backgroundColor = HMColor(211, 211, 211);
     //设置导航栏
     [self setUpNav];
     //获取用户信息
@@ -46,9 +57,11 @@
     [self statusesuUpRefresh];
      //获取未读微博数量
     NSTimer *timer= [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(setUpUnreadCount) userInfo:nil repeats:YES];
+    //加到主运行循环中 不然拖拽就会停止工作
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
     
-}- (void)setUpUnreadCount {
+}
+- (void)setUpUnreadCount {
     
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
     
@@ -84,8 +97,11 @@
     [self controlResfresh:control];
 }
 - (void)controlResfresh:(UIRefreshControl *)control {
+    
+    
     //那到原来数组中的第一个微博信息
-    HMStatus *status = [_statuses firstObject];
+//    HMStatusFrame *statsesF = [self.statusFrames firstObject];
+    HMStatus *status = [self.status  firstObject];
     //1.获取账户信息
     HMAcountModel *account = [HMAccountTool account];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
@@ -98,16 +114,20 @@
     [manager GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         //1.字典数组转为模型数组
         NSArray *newStatus = [HMStatus objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        
+      
+        
         //2.将数组中的模型插入到属性数组的最前面
         NSRange range = NSMakeRange(0, newStatus.count);
         NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:range];
-        [self.statuses insertObjects:newStatus atIndexes:set];
+        [self.status insertObjects:newStatus atIndexes:set];
         [self.tableView reloadData];
         //结束刷新
         [control endRefreshing];
         //显示加载数量
         [self showNewStatusCount:newStatus.count];
-//        HMLog(@"-----%@", NSStringFromUIEdgeInsets(self.tableView.contentInset));
+        self.tabBarItem.badgeValue = 0;
+        [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         [control endRefreshing];
         HMLog(@"-%@",error);
@@ -242,31 +262,34 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.statuses.count;
+    return self.status.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    //获得模型
+    HMStatus *status = self.status[indexPath.row];
     
+    HMStatusCell *cell = [HMStatusCell cellWithTableView:tableView];
+    HMStatusFrame *statusFrames = [[HMStatusFrame alloc] init];
+    statusFrames.status = status;
+   
     
-    HMStatus *status = self.statuses[indexPath.row];
-    HMUser *user = status.user;
-    
-    static NSString *ID = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-    }
-    cell.textLabel.text = user.name;
-    cell.detailTextLabel.text = status.text;
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:user.avatar_large] placeholderImage:[UIImage imageNamed:@"avatar_default"]];
+    //传递模型
+    cell.statusFrame = statusFrames;
     return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    HMStatus *status = self.status[indexPath.row];
+    HMStatusFrame *frame = [[HMStatusFrame alloc] init];
+    frame.status = status;
+    return frame.height;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    if (self.status.count == 0 || self.tableView.tableFooterView.isHidden == NO) return;
     CGFloat offsetY = scrollView.contentOffset.y;
     // 如果tableView还没有数据，就直接返回
-    if (self.statuses.count == 0) return;
     //    if ([self.tableView numberOfRowsInSection:0] == 0) return;
     
     // 当最后一个cell完全显示在眼前时，contentOffset的y值
@@ -296,6 +319,8 @@
  */
 - (void)loadMoreStatus
 {
+    
+    
     // 1.请求管理者
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
     
@@ -305,7 +330,8 @@
     params[@"access_token"] = account.access_token;
     
     // 取出最后面的微博（最新的微博，ID最大的微博）
-    HMStatus *lastStatus = [self.statuses lastObject];
+//    HMStatusFrame *statusFrame = [self.statusFrames lastObject];
+    HMStatus *lastStatus = [self.status lastObject];;
     if (lastStatus) {
         // 若指定此参数，则返回ID小于或等于max_id的微博，默认为0。
         // id这种数据一般都是比较大的，一般转成整数的话，最好是long long类型
@@ -318,18 +344,33 @@
         NSArray *newStatuses = [HMStatus objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
         
         // 将更多的微博数据，添加到总数组的最后面
-        [self.statuses addObjectsFromArray:newStatuses];
+        [self.status addObjectsFromArray:newStatuses];
         
         // 刷新表格
-        [self.tableView reloadData];
         
         // 结束刷新(隐藏footer)
         self.tableView.tableFooterView.hidden = YES;
+        [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         HMLog(@"请求失败-%@", error);
+        
         // 结束刷新
         self.tableView.tableFooterView.hidden = YES;
+        [self.tableView reloadData];
     }];
+}
+/**
+ *  将HWStatus模型转为HWStatusFrame模型
+ */
+- (NSArray *)stausFramesWithStatuses:(NSArray *)statuses
+{
+    NSMutableArray *frames = [NSMutableArray array];
+    for (HMStatus *status in statuses) {
+        HMStatusFrame *f = [[HMStatusFrame alloc] init];
+        f.status = status;
+        [frames addObject:f];
+    }
+    return frames;
 }
 
 @end
