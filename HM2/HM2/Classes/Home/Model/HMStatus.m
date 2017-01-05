@@ -111,7 +111,18 @@
     
 }
 
-
+- (void)setSource:(NSString *)source {//在set方法中截取比较好 因为只调用一次的
+    
+    //截取字符串
+    if (source.length) {
+        NSRange rng = [source rangeOfString:@">"];
+        NSRange range = [source rangeOfString:@"</"];
+        NSString *sour = [source substringWithRange:NSMakeRange(rng.location + 1, range.location - rng.location - 1)];
+        _source = [NSString stringWithFormat:@"来自 %@",sour];
+    }
+    
+    
+}
 
 
 

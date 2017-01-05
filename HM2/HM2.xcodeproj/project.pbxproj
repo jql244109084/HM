@@ -26,6 +26,7 @@
 		617B59371E1759F80053685C /* HMPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 617B59361E1759F80053685C /* HMPhoto.m */; };
 		617B593A1E19058B0053685C /* HMStatusToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 617B59391E19058B0053685C /* HMStatusToolBar.m */; };
 		617B593C1E1BF6E60053685C /* fakeStatus.plist in Resources */ = {isa = PBXBuildFile; fileRef = 617B593B1E1BF6E60053685C /* fakeStatus.plist */; };
+		617B59421E1E829A0053685C /* NSString+HMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 617B59411E1E829A0053685C /* NSString+HMExtension.m */; };
 		617C47921DFB98CC00F51207 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 617C47801DFB98CC00F51207 /* AFHTTPRequestOperation.m */; };
 		617C47931DFB98CC00F51207 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 617C47821DFB98CC00F51207 /* AFHTTPRequestOperationManager.m */; };
 		617C47941DFB98CC00F51207 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 617C47841DFB98CC00F51207 /* AFHTTPSessionManager.m */; };
@@ -140,6 +141,8 @@
 		617B59381E19058B0053685C /* HMStatusToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusToolBar.h; sourceTree = "<group>"; };
 		617B59391E19058B0053685C /* HMStatusToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMStatusToolBar.m; sourceTree = "<group>"; };
 		617B593B1E1BF6E60053685C /* fakeStatus.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fakeStatus.plist; sourceTree = "<group>"; };
+		617B59401E1E829A0053685C /* NSString+HMExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HMExtension.h"; sourceTree = "<group>"; };
+		617B59411E1E829A0053685C /* NSString+HMExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HMExtension.m"; sourceTree = "<group>"; };
 		617C477F1DFB98CC00F51207 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		617C47801DFB98CC00F51207 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		617C47811DFB98CC00F51207 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -400,6 +403,8 @@
 				61702A321CCB6C70002E15A5 /* UIBarButtonItem+HMBarButtonItem.m */,
 				618104361DFD1636000630A8 /* UIWindow+HMExtension.h */,
 				618104371DFD1636000630A8 /* UIWindow+HMExtension.m */,
+				617B59401E1E829A0053685C /* NSString+HMExtension.h */,
+				617B59411E1E829A0053685C /* NSString+HMExtension.m */,
 			);
 			path = Catogra;
 			sourceTree = "<group>";
@@ -885,6 +890,7 @@
 				9AAED36E1E03857200FA9E66 /* UIImage+WebP.m in Sources */,
 				618A0FB51DFC318500D62CD3 /* MBProgressHUD.m in Sources */,
 				617C47941DFB98CC00F51207 /* AFHTTPSessionManager.m in Sources */,
+				617B59421E1E829A0053685C /* NSString+HMExtension.m in Sources */,
 				61702A301CCB5B17002E15A5 /* HMProfileTableViewController.m in Sources */,
 				6187F5A51DFC54B200CB9CC7 /* HMOauthViewController.m in Sources */,
 				9AAED36F1E03857200FA9E66 /* UIImageView+HighlightedWebCache.m in Sources */,

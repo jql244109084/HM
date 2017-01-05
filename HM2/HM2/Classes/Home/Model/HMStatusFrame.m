@@ -10,28 +10,12 @@
 #import "HMUser.h"
 #import "HMStatus.h"
 
-#define HMStatusCellBorderW 10
 #define HMCellMargin 15
 
 @implementation HMStatusFrame
 
-- (CGSize)sizeWithText:(NSString *)text font:(UIFont *)font maxW:(CGFloat)maxW
-{
-    NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
-    attrs[NSFontAttributeName] = font;
-    CGSize maxSize = CGSizeMake(maxW, MAXFLOAT);
-    return [text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size;
-}
-
-- (CGSize)sizeWithText:(NSString *)text font:(UIFont *)font
-{
-    return [self sizeWithText:text font:font maxW:MAXFLOAT];
-}
-
-
 - (void)setStatus:(HMStatus *)status {
     
-    HMLog(@"-------------------begin--------");
     _status =status;
     HMUser *user = status.user;
     
@@ -45,7 +29,7 @@
     
     CGFloat nameX = CGRectGetMaxX(self.iconImageViewF) + HMStatusCellBorderW;
     CGFloat nameY = iconY;
-    CGSize nameSize = [self sizeWithText:user.name font:HMNameFont];
+    CGSize nameSize = [user.name  sizeWithFont:HMNameFont];
     self.nameLebleF = (CGRect){{nameX,nameY},nameSize};
 
     if (status.user.isVip) {//会员大于2 的时候
@@ -58,20 +42,20 @@
     
     CGFloat timeX = nameX;
     CGFloat timeY = CGRectGetMaxY(self.nameLebleF) + HMStatusCellBorderW;
-    CGSize timeSize = [self sizeWithText:status.created_at font:HMTimeFont];
+    CGSize timeSize = [status.created_at  sizeWithFont:HMTimeFont];
     self.timeLebleF = (CGRect){{timeX,timeY},timeSize};
     
     
     CGFloat sourceX = CGRectGetMaxX(self.timeLebleF) + HMStatusCellBorderW;
     CGFloat sourceY = timeY;
-    CGSize sourceSize = [self sizeWithText:status.source font:HMTSourceFont];
+    CGSize sourceSize = [status.source sizeWithFont:HMTSourceFont];
     self.sourceLebleF = (CGRect){{sourceX,sourceY},sourceSize};
     
     
     CGFloat contentX = iconX;
     CGFloat contentY = MAX(CGRectGetMaxY(self.iconImageViewF), CGRectGetMaxY(self.timeLebleF)) + HMStatusCellBorderW;
     CGFloat maxW = cellW - 20;
-    CGSize contentSize = [self sizeWithText:status.text font:HMTContentFont maxW:maxW];
+    CGSize contentSize = [status.text sizeWithFont:HMTContentFont maxW:maxW];
     self.contentLebleF = (CGRect){{contentX,contentY},contentSize};
     
     
@@ -104,7 +88,7 @@
         CGFloat retweetedContentX = HMStatusCellBorderW;
         CGFloat retweetedContentY = HMStatusCellBorderW;
         NSString *content = [NSString stringWithFormat:@"@%@ : %@",retweetedUser.name,retweetedStatus.text];
-        CGSize retweetedContentSize = [self sizeWithText:content font:HMTRetweetContentFont maxW:cellW - 20];
+        CGSize retweetedContentSize = [content sizeWithFont:HMTRetweetContentFont maxW:cellW - 20];
         self.retweetedContentLableF = (CGRect){retweetedContentX,retweetedContentY,retweetedContentSize};
         
         if (retweetedStatus.pic_urls.count) {
@@ -136,7 +120,6 @@
     //cell的高度
     self.height = CGRectGetMaxY(self.toolBarF);
     
-    HMLog(@"-------------------end--------");
 
 }
 @end

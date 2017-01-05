@@ -21,7 +21,7 @@
 #import "HMStatusCell.h"
 
 @interface HMHomeTableViewController ()<HMMenuDelegate,UITableViewDataSource>
-@property (nonatomic, strong) NSMutableArray *status;
+//@property (nonatomic, strong) NSMutableArray *status;
 @property (nonatomic, strong) NSMutableArray *statusF;
 
 
@@ -31,12 +31,12 @@
 
 @implementation HMHomeTableViewController
 
-- (NSMutableArray *)status {
-    if (!_status) {
-        _status = [NSMutableArray array];
-    }
-    return _status;
-}
+//- (NSMutableArray *)status {
+//    if (!_status) {
+//        _status = [NSMutableArray array];
+//    }
+//    return _status;
+//}
 - (NSMutableArray *)statusF {
     if (!_statusF) {
         _statusF = [NSMutableArray array];
@@ -100,8 +100,8 @@
     
     
     //那到原来数组中的第一个微博信息
-//    HMStatusFrame *statsesF = [self.statusFrames firstObject];
-    HMStatus *status = [self.status  firstObject];
+    HMStatusFrame *statsesFrame = [self.statusF firstObject];
+    HMStatus *status = statsesFrame.status ;
     //1.获取账户信息
     HMAcountModel *account = [HMAccountTool account];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
@@ -116,11 +116,12 @@
         NSArray *newStatus = [HMStatus objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
         
       
+        NSArray *status = [self stausFramesWithStatuses:newStatus];
         
         //2.将数组中的模型插入到属性数组的最前面
         NSRange range = NSMakeRange(0, newStatus.count);
         NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:range];
-        [self.status insertObjects:newStatus atIndexes:set];
+        [self.statusF insertObjects:status atIndexes:set];
         [self.tableView reloadData];
         //结束刷新
         [control endRefreshing];
@@ -262,16 +263,14 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.status.count;
+    return self.statusF.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     //获得模型
-    HMStatus *status = self.status[indexPath.row];
+    HMStatusFrame *statusFrames = self.statusF[indexPath.row];
     
     HMStatusCell *cell = [HMStatusCell cellWithTableView:tableView];
-    HMStatusFrame *statusFrames = [[HMStatusFrame alloc] init];
-    statusFrames.status = status;
    
     
     //传递模型
@@ -279,15 +278,13 @@
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    HMStatus *status = self.status[indexPath.row];
-    HMStatusFrame *frame = [[HMStatusFrame alloc] init];
-    frame.status = status;
-    return frame.height;
+    HMStatusFrame *statusF = self.statusF[indexPath.row];
+    return statusF.height;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if (self.status.count == 0 || self.tableView.tableFooterView.isHidden == NO) return;
+    if (self.statusF.count == 0 || self.tableView.tableFooterView.isHidden == NO) return;
     CGFloat offsetY = scrollView.contentOffset.y;
     // 如果tableView还没有数据，就直接返回
     //    if ([self.tableView numberOfRowsInSection:0] == 0) return;
@@ -330,8 +327,8 @@
     params[@"access_token"] = account.access_token;
     
     // 取出最后面的微博（最新的微博，ID最大的微博）
-//    HMStatusFrame *statusFrame = [self.statusFrames lastObject];
-    HMStatus *lastStatus = [self.status lastObject];;
+    HMStatusFrame *statusFrame = [self.statusF lastObject];
+    HMStatus *lastStatus = statusFrame.status;
     if (lastStatus) {
         // 若指定此参数，则返回ID小于或等于max_id的微博，默认为0。
         // id这种数据一般都是比较大的，一般转成整数的话，最好是long long类型
@@ -342,9 +339,9 @@
     [mgr GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
         // 将 "微博字典"数组 转为 "微博模型"数组
         NSArray *newStatuses = [HMStatus objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
-        
+        NSArray *statusFrams = [self stausFramesWithStatuses:newStatuses];
         // 将更多的微博数据，添加到总数组的最后面
-        [self.status addObjectsFromArray:newStatuses];
+        [self.statusF addObjectsFromArray:statusFrams];
         
         // 刷新表格
         

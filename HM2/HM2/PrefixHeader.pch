@@ -18,6 +18,7 @@
 #define HMRandomColor HMColor(arc4random_uniform(256),arc4random_uniform(256),arc4random_uniform(256))
 #import "UIView+HMExtention.h"
 #import "UIWindow+HMExtension.h"
+#import "NSString+HMExtension.h"
 
 #ifdef DEBUG
 

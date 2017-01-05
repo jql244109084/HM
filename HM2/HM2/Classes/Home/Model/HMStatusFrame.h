@@ -13,6 +13,7 @@
 #define HMTContentFont [UIFont systemFontOfSize:15]
 //转发微博的文字
 #define HMTRetweetContentFont [UIFont systemFontOfSize:13]
+#define HMStatusCellBorderW 10
 
 @class HMStatus;
 

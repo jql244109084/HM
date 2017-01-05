@@ -121,6 +121,7 @@
     
     //时间
     UILabel *timeLeble = [[UILabel alloc] init];
+    timeLeble.textColor = [UIColor orangeColor];
     timeLeble.font = HMTimeFont;
     [originalView addSubview:timeLeble];
     self.timeLeble = timeLeble;
@@ -174,10 +175,20 @@
     self.nameLeble.text = user.name;
     
     //时间
-    self.timeLeble.frame = statusFrame.timeLebleF;
+    
+    CGFloat timeX = self.nameLeble.x;
+    CGFloat timeY = CGRectGetMaxY(statusFrame.nameLebleF) + HMStatusCellBorderW;
+    CGSize timeSize = [status.created_at  sizeWithFont:HMTimeFont];
+    self.timeLeble.frame = (CGRect){{timeX,timeY},timeSize};
     self.timeLeble.text = status.created_at;
+    
+    
+    
     //来源
-    self.sourceLeble.frame = statusFrame.sourceLebleF;
+    CGFloat sourceX = CGRectGetMaxX(statusFrame.timeLebleF) + HMStatusCellBorderW;
+    CGFloat sourceY = timeY;
+    CGSize sourceSize = [status.source sizeWithFont:HMTSourceFont];
+    self.sourceLeble.frame = (CGRect){{sourceX,sourceY},sourceSize};
     self.sourceLeble.text = status.source;
     
     //内容
