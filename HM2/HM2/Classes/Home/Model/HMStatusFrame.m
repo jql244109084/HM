@@ -9,8 +9,10 @@
 #import "HMStatusFrame.h"
 #import "HMUser.h"
 #import "HMStatus.h"
+#import "HMStatusPhoto.h"
 
 #define HMCellMargin 15
+
 
 @implementation HMStatusFrame
 
@@ -65,10 +67,9 @@
     if (self.status.pic_urls.count) {
         CGFloat photoX = HMStatusCellBorderW;
         CGFloat photoY = CGRectGetMaxY(self.contentLebleF) + HMStatusCellBorderW;
-        CGFloat photoW = 100;
-        CGFloat photoH = 100;
-        self.photoImageViewF = CGRectMake(photoX, photoY, photoW, photoH);
-        originalH = CGRectGetMaxY(self.photoImageViewF);
+        CGSize photosSize = [HMStatusPhoto sizeWithCount:self.status.pic_urls.count];
+        self.photoViewF = (CGRect){{photoX, photoY}, photosSize};
+        originalH = CGRectGetMaxY(self.photoViewF);
         
     }else{
         originalH = CGRectGetMaxY(self.contentLebleF);
@@ -93,12 +94,12 @@
         
         if (retweetedStatus.pic_urls.count) {
             CGFloat retweetedX = HMStatusCellBorderW;
-            CGFloat retweetedH = CGRectGetMaxY(self.retweetedContentLableF) + HMStatusCellBorderW;
-            CGFloat retweetedW = 100;
-            CGFloat retweetedh = 100;
-            self.retweetedPhotoImageViewF = CGRectMake(retweetedX, retweetedH, retweetedW, retweetedh);
+            CGFloat retweetedY = CGRectGetMaxY(self.retweetedContentLableF) + HMStatusCellBorderW;
             
-            self.retweetedViewF = CGRectMake(0, CGRectGetMaxY(self.originalViewF), cellW, CGRectGetMaxY(self.retweetedPhotoImageViewF));
+            CGSize retweetedphotosSize = [HMStatusPhoto sizeWithCount:retweetedStatus.pic_urls.count];
+            self.retweetedPhotosViewF = (CGRect){{retweetedX, retweetedY}, retweetedphotosSize};
+            
+            self.retweetedViewF = CGRectMake(0, CGRectGetMaxY(self.originalViewF), cellW, CGRectGetMaxY(self.retweetedPhotosViewF));
         }else{
             
             self.retweetedViewF = CGRectMake(0, CGRectGetMaxY(self.originalViewF), cellW, CGRectGetMaxY(self.retweetedContentLableF));
@@ -116,7 +117,7 @@
     CGFloat toolBarX = 0;
     CGFloat toolBarW = cellW;
     CGFloat toolBarH = 35.0;
-    self.toolBarF = CGRectMake(toolBarX, toolBarY, toolBarW, toolBarH);
+    self.toolBarF = CGRectMake(toolBarX, toolBarY + HMStatusCellBorderW, toolBarW, toolBarH);
     //cell的高度
     self.height = CGRectGetMaxY(self.toolBarF);
     

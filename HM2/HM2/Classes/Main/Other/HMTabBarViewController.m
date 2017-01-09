@@ -13,6 +13,7 @@
 #import "HMDiscoverTableViewController.h"
 #import "HMNavigationViewController.h"
 #import "HMTabBar.h"
+#import "HMStatusResponseController.h"
 
 @interface HMTabBarViewController ()<HMTabBarDelegate>
 @end
@@ -77,9 +78,9 @@
 
 -(void)tabBar:(HMTabBar *)tabBar didClick:(UIButton *)button{
     
-    UIViewController *vc = [[UIViewController alloc] init];
-    vc.view.backgroundColor = [UIColor yellowColor];
-    [self  presentViewController:vc animated:YES completion:nil];
+    HMStatusResponseController *responseVc = [[HMStatusResponseController alloc] init];
+    HMNavigationViewController *nav = [[HMNavigationViewController alloc] initWithRootViewController:responseVc];
+    [self  presentViewController:nav animated:YES completion:nil];
 }
 
 

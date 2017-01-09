@@ -13,12 +13,15 @@
 #import "UIImageView+WebCache.h"
 #import "HMPhoto.h"
 #import "HMStatusToolBar.h"
+#import "HMStatusPhoto.h"
+//15010337886
 
 @interface HMStatusCell ()
 /** 原始微博 */
 @property (nonatomic,weak) UIImageView *iconImageView;
 @property (nonatomic,weak) UIImageView *vipImageView;
-@property (nonatomic,weak) UIImageView *photoImageView;
+
+@property (nonatomic,weak) HMStatusPhoto *photosView;
 @property (nonatomic,weak) UILabel *nameLeble;
 @property (nonatomic,weak) UILabel *timeLeble;
 @property (nonatomic,weak) UILabel *sourceLeble;
@@ -28,7 +31,7 @@
 /** 原始微博 */
 @property (nonatomic,weak) UIView *retweetedView;
 @property (nonatomic,weak) UILabel *retweetedContentLable;
-@property (nonatomic,weak) UIImageView *retweetedPhotoImageView;
+@property (nonatomic,weak) HMStatusPhoto *retweetedPhotosView;
 
 /** 工具条 */
 @property (nonatomic,weak) HMStatusToolBar *toolBarView;
@@ -55,7 +58,7 @@
         self.selectionStyle = UITableViewCellSelectionStyleNone;
 //        self.selectedBackgroundView 
         
-        self.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor whiteColor];
         //原始微博
         [self setUpOriginal];
         //转发微博
@@ -84,9 +87,9 @@
     [retweetedView addSubview:retweetedContentLable];
     self.retweetedContentLable = retweetedContentLable;
     //转发配图
-    UIImageView *retweetedPhotoImageView = [[UIImageView alloc] init];
-    [retweetedView addSubview:retweetedPhotoImageView];
-    self.retweetedPhotoImageView = retweetedPhotoImageView;
+    HMStatusPhoto *retweetedPhotosView = [[HMStatusPhoto alloc] init];
+    [retweetedView addSubview:retweetedPhotosView];
+    self.retweetedPhotosView = retweetedPhotosView;
 }
 - (void)setUpOriginal {
     //背景view
@@ -107,9 +110,9 @@
     
     
     //配图
-    UIImageView *photoImageView = [[UIImageView alloc] init];
-    [originalView addSubview:photoImageView];
-    self.photoImageView = photoImageView;
+    HMStatusPhoto *photosView = [[HMStatusPhoto alloc] init];
+    [originalView addSubview:photosView];
+    self.photosView = photosView;
     
     
     //昵称
@@ -146,7 +149,8 @@
     //取出模型
     HMStatus *status = statusFrame.status;
     HMUser *user = status.user;
-    HMPhoto *photo = status.pic_urls.firstObject;
+//    HMPhoto *photo = status.pic_urls.firstObject;
+    
     
     //头像
     self.iconImageView.frame = statusFrame.iconImageViewF;
@@ -164,11 +168,11 @@
     
     if (status.pic_urls.count) {
         //配图
-        self.photoImageView.hidden = NO;
-        self.photoImageView.frame = statusFrame.photoImageViewF;
-        [self.photoImageView sd_setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic ] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
+        self.photosView.hidden = NO;
+        self.photosView.frame = statusFrame.photoViewF;
+        self.photosView.phtots = status.pic_urls;
     }else{
-        self.photoImageView.hidden = YES;
+        self.photosView.hidden = YES;
     }
     //昵称
     self.nameLeble.frame = statusFrame.nameLebleF;
@@ -209,11 +213,11 @@
         self.retweetedContentLable.text = [NSString stringWithFormat:@"@%@ : %@",retweetedUser.name,retweetedStatus.text];
         //转发微博的配图
         if(retweetedStatus.pic_urls.count){//有配图
-            self.retweetedPhotoImageView.hidden = NO;
-            self.retweetedPhotoImageView.frame = statusFrame.retweetedPhotoImageViewF;
-            [self.retweetedPhotoImageView sd_setImageWithURL:[NSURL URLWithString:retweetedPhoto.thumbnail_pic ] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
+            self.retweetedPhotosView.hidden = NO;
+            self.retweetedPhotosView.frame = statusFrame.retweetedPhotosViewF;
+            self.retweetedPhotosView.phtots = retweetedStatus.pic_urls;
         }else{
-            self.retweetedPhotoImageView.hidden = YES;
+            self.retweetedPhotosView.hidden = YES;
         }
     }else{
         self.retweetedView.hidden = YES;

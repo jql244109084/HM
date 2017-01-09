@@ -49,7 +49,6 @@ static dispatch_group_t url_request_operation_completion_group() {
     dispatch_once(&onceToken, ^{
         af_url_request_operation_completion_group = dispatch_group_create();
     });
-
     return af_url_request_operation_completion_group;
 }
 

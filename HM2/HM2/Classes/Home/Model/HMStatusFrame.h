@@ -22,7 +22,7 @@
 //原始微博
 @property (nonatomic,assign) CGRect iconImageViewF;
 @property (nonatomic,assign) CGRect vipImageViewF;
-@property (nonatomic,assign) CGRect photoImageViewF;
+@property (nonatomic,assign) CGRect photoViewF;
 @property (nonatomic,assign) CGRect nameLebleF;
 @property (nonatomic,assign) CGRect timeLebleF;
 @property (nonatomic,assign) CGRect sourceLebleF;
@@ -35,7 +35,7 @@
 /** 转发昵称 ＋ 内容 */
 @property (nonatomic,assign) CGRect retweetedContentLableF;
 /** 转发配图 */
-@property (nonatomic,assign) CGRect retweetedPhotoImageViewF;
+@property (nonatomic,assign) CGRect retweetedPhotosViewF;
 
 
 /** 工具条 */

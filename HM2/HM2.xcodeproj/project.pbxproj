@@ -27,6 +27,10 @@
 		617B593A1E19058B0053685C /* HMStatusToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 617B59391E19058B0053685C /* HMStatusToolBar.m */; };
 		617B593C1E1BF6E60053685C /* fakeStatus.plist in Resources */ = {isa = PBXBuildFile; fileRef = 617B593B1E1BF6E60053685C /* fakeStatus.plist */; };
 		617B59421E1E829A0053685C /* NSString+HMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 617B59411E1E829A0053685C /* NSString+HMExtension.m */; };
+		617B59451E1FCFBB0053685C /* HMStatusPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 617B59441E1FCFBB0053685C /* HMStatusPhoto.m */; };
+		617B59481E20EDAA0053685C /* HMStatusGifPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 617B59471E20EDAA0053685C /* HMStatusGifPhotoView.m */; };
+		617B594E1E23C04B0053685C /* HMStatusResponseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 617B594D1E23C04B0053685C /* HMStatusResponseController.m */; };
+		617B59511E23C1010053685C /* HMStatusTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 617B59501E23C1010053685C /* HMStatusTextView.m */; };
 		617C47921DFB98CC00F51207 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 617C47801DFB98CC00F51207 /* AFHTTPRequestOperation.m */; };
 		617C47931DFB98CC00F51207 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 617C47821DFB98CC00F51207 /* AFHTTPRequestOperationManager.m */; };
 		617C47941DFB98CC00F51207 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 617C47841DFB98CC00F51207 /* AFHTTPSessionManager.m */; };
@@ -143,6 +147,14 @@
 		617B593B1E1BF6E60053685C /* fakeStatus.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fakeStatus.plist; sourceTree = "<group>"; };
 		617B59401E1E829A0053685C /* NSString+HMExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HMExtension.h"; sourceTree = "<group>"; };
 		617B59411E1E829A0053685C /* NSString+HMExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HMExtension.m"; sourceTree = "<group>"; };
+		617B59431E1FCFBB0053685C /* HMStatusPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusPhoto.h; sourceTree = "<group>"; };
+		617B59441E1FCFBB0053685C /* HMStatusPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMStatusPhoto.m; sourceTree = "<group>"; };
+		617B59461E20EDAA0053685C /* HMStatusGifPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusGifPhotoView.h; sourceTree = "<group>"; };
+		617B59471E20EDAA0053685C /* HMStatusGifPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMStatusGifPhotoView.m; sourceTree = "<group>"; };
+		617B594C1E23C04B0053685C /* HMStatusResponseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusResponseController.h; sourceTree = "<group>"; };
+		617B594D1E23C04B0053685C /* HMStatusResponseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMStatusResponseController.m; sourceTree = "<group>"; };
+		617B594F1E23C1010053685C /* HMStatusTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusTextView.h; sourceTree = "<group>"; };
+		617B59501E23C1010053685C /* HMStatusTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMStatusTextView.m; sourceTree = "<group>"; };
 		617C477F1DFB98CC00F51207 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		617C47801DFB98CC00F51207 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		617C47811DFB98CC00F51207 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -356,6 +368,8 @@
 			children = (
 				61702A041CCB5B17002E15A5 /* HMHomeTableViewController.h */,
 				61702A051CCB5B17002E15A5 /* HMHomeTableViewController.m */,
+				617B594C1E23C04B0053685C /* HMStatusResponseController.h */,
+				617B594D1E23C04B0053685C /* HMStatusResponseController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -377,6 +391,10 @@
 				619E14931E1146B70050BF44 /* HMStatusCell.m */,
 				617B59381E19058B0053685C /* HMStatusToolBar.h */,
 				617B59391E19058B0053685C /* HMStatusToolBar.m */,
+				617B59431E1FCFBB0053685C /* HMStatusPhoto.h */,
+				617B59441E1FCFBB0053685C /* HMStatusPhoto.m */,
+				617B59461E20EDAA0053685C /* HMStatusGifPhotoView.h */,
+				617B59471E20EDAA0053685C /* HMStatusGifPhotoView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -518,6 +536,8 @@
 				61702A391CCB921D002E15A5 /* HMSeatchBarTextField.m */,
 				6152C3E61CCE300E00305E59 /* HMTabBar.h */,
 				6152C3E71CCE300E00305E59 /* HMTabBar.m */,
+				617B594F1E23C1010053685C /* HMStatusTextView.h */,
+				617B59501E23C1010053685C /* HMStatusTextView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -871,12 +891,14 @@
 				61CDE3CF1E054CDC0040BCEF /* MJTypeEncoding.m in Sources */,
 				61CDE3AE1E05484C0040BCEF /* HMStatus.m in Sources */,
 				617C47921DFB98CC00F51207 /* AFHTTPRequestOperation.m in Sources */,
+				617B594E1E23C04B0053685C /* HMStatusResponseController.m in Sources */,
 				61702A291CCB5B17002E15A5 /* AppDelegate.m in Sources */,
 				61CDE3CA1E054CDC0040BCEF /* MJFoundation.m in Sources */,
 				61CDE3CC1E054CDC0040BCEF /* MJMember.m in Sources */,
 				61702A2B1CCB5B17002E15A5 /* HMTabBarViewController.m in Sources */,
 				9AAED3691E03857200FA9E66 /* SDWebImageManager.m in Sources */,
 				61702A281CCB5B17002E15A5 /* UIView+HMExtention.m in Sources */,
+				617B59451E1FCFBB0053685C /* HMStatusPhoto.m in Sources */,
 				618A0FB31DFC318500D62CD3 /* MBProgressHUD+MJ.m in Sources */,
 				61702A2E1CCB5B17002E15A5 /* HMTest2ViewController.m in Sources */,
 				9AAED36D1E03857200FA9E66 /* UIImage+MultiFormat.m in Sources */,
@@ -891,6 +913,7 @@
 				618A0FB51DFC318500D62CD3 /* MBProgressHUD.m in Sources */,
 				617C47941DFB98CC00F51207 /* AFHTTPSessionManager.m in Sources */,
 				617B59421E1E829A0053685C /* NSString+HMExtension.m in Sources */,
+				617B59481E20EDAA0053685C /* HMStatusGifPhotoView.m in Sources */,
 				61702A301CCB5B17002E15A5 /* HMProfileTableViewController.m in Sources */,
 				6187F5A51DFC54B200CB9CC7 /* HMOauthViewController.m in Sources */,
 				9AAED36F1E03857200FA9E66 /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -931,6 +954,7 @@
 				9AAED36B1E03857200FA9E66 /* UIButton+WebCache.m in Sources */,
 				61702A2D1CCB5B17002E15A5 /* HMTest1ViewController.m in Sources */,
 				61EA10B41E00375E007E25A7 /* HMMyButton.m in Sources */,
+				617B59511E23C1010053685C /* HMStatusTextView.m in Sources */,
 				617C47931DFB98CC00F51207 /* AFHTTPRequestOperationManager.m in Sources */,
 				9AAED3711E03857200FA9E66 /* UIView+WebCacheOperation.m in Sources */,
 				61CDE3C91E054CDC0040BCEF /* MJConst.m in Sources */,
