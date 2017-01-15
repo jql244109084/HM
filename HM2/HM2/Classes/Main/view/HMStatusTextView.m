@@ -20,6 +20,19 @@
 - (void)textChange {
     [self setNeedsDisplay];
 }
+- (void)setPleacehoder:(NSString *)pleacehoder {
+    _pleacehoder = [pleacehoder copy];
+    [self setNeedsDisplay];
+}
+- (void)setColor:(UIColor *)color {
+    _color = color;
+    [self setNeedsDisplay];
+}
+- (void)setFont:(UIFont *)font
+{
+    [super setFont:font];
+    [self setNeedsDisplay];
+}
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
     if ([self hasText]) return;

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		610A2F201E2A092100E0F71E /* HMEmotionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 610A2F1F1E2A092100E0F71E /* HMEmotionView.m */; };
+		610A2F231E2A093E00E0F71E /* HMEmotionToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 610A2F221E2A093E00E0F71E /* HMEmotionToolbar.m */; };
+		610A2F261E2A094D00E0F71E /* HMEmotionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 610A2F251E2A094D00E0F71E /* HMEmotionList.m */; };
+		610A2F291E2A6F8000E0F71E /* HMResponseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 610A2F281E2A6F8000E0F71E /* HMResponseButton.m */; };
+		610A30F11E2B8AA100E0F71E /* EmotionIcons in Resources */ = {isa = PBXBuildFile; fileRef = 610A30F01E2B8AA100E0F71E /* EmotionIcons */; };
 		6117B08D1CD0F19E00C764CF /* HMNewFutureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6117B08C1CD0F19E00C764CF /* HMNewFutureViewController.m */; };
 		614ED37D1CCC71CE001EE125 /* HMMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 614ED37C1CCC71CE001EE125 /* HMMenu.m */; };
 		6152C3E81CCE300E00305E59 /* HMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6152C3E71CCE300E00305E59 /* HMTabBar.m */; };
@@ -31,6 +36,8 @@
 		617B59481E20EDAA0053685C /* HMStatusGifPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 617B59471E20EDAA0053685C /* HMStatusGifPhotoView.m */; };
 		617B594E1E23C04B0053685C /* HMStatusResponseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 617B594D1E23C04B0053685C /* HMStatusResponseController.m */; };
 		617B59511E23C1010053685C /* HMStatusTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 617B59501E23C1010053685C /* HMStatusTextView.m */; };
+		617B59541E251B230053685C /* HMResponseToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 617B59531E251B230053685C /* HMResponseToolbar.m */; };
+		617B59571E2660A50053685C /* HMPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 617B59561E2660A50053685C /* HMPhotosView.m */; };
 		617C47921DFB98CC00F51207 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 617C47801DFB98CC00F51207 /* AFHTTPRequestOperation.m */; };
 		617C47931DFB98CC00F51207 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 617C47821DFB98CC00F51207 /* AFHTTPRequestOperationManager.m */; };
 		617C47941DFB98CC00F51207 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 617C47841DFB98CC00F51207 /* AFHTTPSessionManager.m */; };
@@ -108,6 +115,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		610A2F1E1E2A092100E0F71E /* HMEmotionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMEmotionView.h; sourceTree = "<group>"; };
+		610A2F1F1E2A092100E0F71E /* HMEmotionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMEmotionView.m; sourceTree = "<group>"; };
+		610A2F211E2A093E00E0F71E /* HMEmotionToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMEmotionToolbar.h; sourceTree = "<group>"; };
+		610A2F221E2A093E00E0F71E /* HMEmotionToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMEmotionToolbar.m; sourceTree = "<group>"; };
+		610A2F241E2A094D00E0F71E /* HMEmotionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMEmotionList.h; sourceTree = "<group>"; };
+		610A2F251E2A094D00E0F71E /* HMEmotionList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMEmotionList.m; sourceTree = "<group>"; };
+		610A2F271E2A6F8000E0F71E /* HMResponseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMResponseButton.h; sourceTree = "<group>"; };
+		610A2F281E2A6F8000E0F71E /* HMResponseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMResponseButton.m; sourceTree = "<group>"; };
+		610A30F01E2B8AA100E0F71E /* EmotionIcons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = EmotionIcons; sourceTree = "<group>"; };
 		6117B08B1CD0F19E00C764CF /* HMNewFutureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNewFutureViewController.h; sourceTree = "<group>"; };
 		6117B08C1CD0F19E00C764CF /* HMNewFutureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNewFutureViewController.m; sourceTree = "<group>"; };
 		611AB45B1CCA1DDD003C2211 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -155,6 +171,10 @@
 		617B594D1E23C04B0053685C /* HMStatusResponseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMStatusResponseController.m; sourceTree = "<group>"; };
 		617B594F1E23C1010053685C /* HMStatusTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusTextView.h; sourceTree = "<group>"; };
 		617B59501E23C1010053685C /* HMStatusTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMStatusTextView.m; sourceTree = "<group>"; };
+		617B59521E251B230053685C /* HMResponseToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMResponseToolbar.h; sourceTree = "<group>"; };
+		617B59531E251B230053685C /* HMResponseToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMResponseToolbar.m; sourceTree = "<group>"; };
+		617B59551E2660A50053685C /* HMPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotosView.h; sourceTree = "<group>"; };
+		617B59561E2660A50053685C /* HMPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotosView.m; sourceTree = "<group>"; };
 		617C477F1DFB98CC00F51207 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		617C47801DFB98CC00F51207 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		617C47811DFB98CC00F51207 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -297,6 +317,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		610A2F1C1E2A090000E0F71E /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				610A2F1D1E2A091100E0F71E /* View */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		610A2F1D1E2A091100E0F71E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				610A2F1E1E2A092100E0F71E /* HMEmotionView.h */,
+				610A2F1F1E2A092100E0F71E /* HMEmotionView.m */,
+				610A2F211E2A093E00E0F71E /* HMEmotionToolbar.h */,
+				610A2F221E2A093E00E0F71E /* HMEmotionToolbar.m */,
+				610A2F241E2A094D00E0F71E /* HMEmotionList.h */,
+				610A2F251E2A094D00E0F71E /* HMEmotionList.m */,
+				610A2F271E2A6F8000E0F71E /* HMResponseButton.h */,
+				610A2F281E2A6F8000E0F71E /* HMResponseButton.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		6117B08A1CD0F14A00C764CF /* NewFuture */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +352,7 @@
 		617029FB1CCB5B17002E15A5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				610A2F1C1E2A090000E0F71E /* Response */,
 				6187F59A1DFC54B200CB9CC7 /* Oauth */,
 				6117B08A1CD0F14A00C764CF /* NewFuture */,
 				617029FC1CCB5B17002E15A5 /* Discover */,
@@ -395,6 +439,10 @@
 				617B59441E1FCFBB0053685C /* HMStatusPhoto.m */,
 				617B59461E20EDAA0053685C /* HMStatusGifPhotoView.h */,
 				617B59471E20EDAA0053685C /* HMStatusGifPhotoView.m */,
+				617B59521E251B230053685C /* HMResponseToolbar.h */,
+				617B59531E251B230053685C /* HMResponseToolbar.m */,
+				617B59551E2660A50053685C /* HMPhotosView.h */,
+				617B59561E2660A50053685C /* HMPhotosView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -689,6 +737,7 @@
 		6918A7251CC71BBE009B2A11 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				610A30F01E2B8AA100E0F71E /* EmotionIcons */,
 				617B593B1E1BF6E60053685C /* fakeStatus.plist */,
 				611AB45B1CCA1DDD003C2211 /* PrefixHeader.pch */,
 			);
@@ -822,6 +871,7 @@
 					6918A7211CC71BBE009B2A11 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = XY3DX473G7;
+						ProvisioningStyle = Automatic;
 					};
 					6918A73A1CC71BBE009B2A11 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -862,6 +912,7 @@
 				617B593C1E1BF6E60053685C /* fakeStatus.plist in Resources */,
 				6918A7351CC71BBE009B2A11 /* LaunchScreen.storyboard in Resources */,
 				61CDE3F51E069A280040BCEF /* HWLoadMoreFooter.xib in Resources */,
+				610A30F11E2B8AA100E0F71E /* EmotionIcons in Resources */,
 				6918A7321CC71BBE009B2A11 /* Assets.xcassets in Resources */,
 				618A0FB41DFC318500D62CD3 /* MBProgressHUD.bundle in Resources */,
 			);
@@ -897,11 +948,13 @@
 				61CDE3CC1E054CDC0040BCEF /* MJMember.m in Sources */,
 				61702A2B1CCB5B17002E15A5 /* HMTabBarViewController.m in Sources */,
 				9AAED3691E03857200FA9E66 /* SDWebImageManager.m in Sources */,
+				610A2F201E2A092100E0F71E /* HMEmotionView.m in Sources */,
 				61702A281CCB5B17002E15A5 /* UIView+HMExtention.m in Sources */,
 				617B59451E1FCFBB0053685C /* HMStatusPhoto.m in Sources */,
 				618A0FB31DFC318500D62CD3 /* MBProgressHUD+MJ.m in Sources */,
 				61702A2E1CCB5B17002E15A5 /* HMTest2ViewController.m in Sources */,
 				9AAED36D1E03857200FA9E66 /* UIImage+MultiFormat.m in Sources */,
+				610A2F231E2A093E00E0F71E /* HMEmotionToolbar.m in Sources */,
 				61CDE3C81E054CDC0040BCEF /* MJArgument.m in Sources */,
 				61702A3A1CCB921D002E15A5 /* HMSeatchBarTextField.m in Sources */,
 				61CDE3F41E069A280040BCEF /* HWLoadMoreFooter.m in Sources */,
@@ -921,10 +974,12 @@
 				9AAED36A1E03857200FA9E66 /* SDWebImagePrefetcher.m in Sources */,
 				614ED37D1CCC71CE001EE125 /* HMMenu.m in Sources */,
 				617C47951DFB98CC00F51207 /* AFNetworkReachabilityManager.m in Sources */,
+				617B59541E251B230053685C /* HMResponseToolbar.m in Sources */,
 				617C479A1DFB98CC00F51207 /* AFURLSessionManager.m in Sources */,
 				6181043A1DFD966D000630A8 /* Foundation+Log.m in Sources */,
 				6187F5A31DFC54B200CB9CC7 /* HMAccountTool.m in Sources */,
 				61702A261CCB5B17002E15A5 /* HMDiscoverTableViewController.m in Sources */,
+				617B59571E2660A50053685C /* HMPhotosView.m in Sources */,
 				9AAED36C1E03857200FA9E66 /* UIImage+GIF.m in Sources */,
 				9AAED3701E03857200FA9E66 /* UIImageView+WebCache.m in Sources */,
 				617B59371E1759F80053685C /* HMPhoto.m in Sources */,
@@ -937,6 +992,7 @@
 				61CDE3CE1E054CDC0040BCEF /* MJType.m in Sources */,
 				617C47991DFB98CC00F51207 /* AFURLResponseSerialization.m in Sources */,
 				61CDE3AF1E05484C0040BCEF /* HMUser.m in Sources */,
+				610A2F291E2A6F8000E0F71E /* HMResponseButton.m in Sources */,
 				9AAED3681E03857200FA9E66 /* SDWebImageDownloaderOperation.m in Sources */,
 				6152C3E81CCE300E00305E59 /* HMTabBar.m in Sources */,
 				61CDE3D11E054CDC0040BCEF /* NSObject+MJKeyValue.m in Sources */,
@@ -954,6 +1010,7 @@
 				9AAED36B1E03857200FA9E66 /* UIButton+WebCache.m in Sources */,
 				61702A2D1CCB5B17002E15A5 /* HMTest1ViewController.m in Sources */,
 				61EA10B41E00375E007E25A7 /* HMMyButton.m in Sources */,
+				610A2F261E2A094D00E0F71E /* HMEmotionList.m in Sources */,
 				617B59511E23C1010053685C /* HMStatusTextView.m in Sources */,
 				617C47931DFB98CC00F51207 /* AFHTTPRequestOperationManager.m in Sources */,
 				9AAED3711E03857200FA9E66 /* UIView+WebCacheOperation.m in Sources */,
@@ -1096,7 +1153,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CREATE_INFOPLIST_SECTION_IN_BINARY = NO;
 				GCC_PREFIX_HEADER = HM2/PrefixHeader.pch;
@@ -1118,7 +1175,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CREATE_INFOPLIST_SECTION_IN_BINARY = NO;
 				GCC_PREFIX_HEADER = HM2/PrefixHeader.pch;
