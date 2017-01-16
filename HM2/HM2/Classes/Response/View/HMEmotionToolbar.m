@@ -10,14 +10,14 @@
 #import "HMResponseButton.h"
 
 @interface HMEmotionToolbar ()
-@property (nonatomic,weak) HMResponseButton *selectedBtton;
+@property (nonatomic,weak) HMResponseButton *selectedBtn;
 
 @end
 
 @implementation HMEmotionToolbar
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        self.selectedBtton = [self setupBtn:@"默认" buttonType:HMEmotionToolbarButtonTypeDefault];
+        [self setupBtn:@"默认" buttonType:HMEmotionToolbarButtonTypeDefault];
         [self setupBtn:@"最近" buttonType:HMEmotionToolbarButtonTypeRecent];
         [self setupBtn:@"Emoji" buttonType:HMEmotionToolbarButtonTypeEmoji];
         [self setupBtn:@"浪小花" buttonType:HMEmotionToolbarButtonTypeLxh];
@@ -30,9 +30,6 @@
     [btn addTarget:self action:@selector(btnSelect:) forControlEvents:UIControlEventTouchDown];
     btn.tag = type;
     [self addSubview:btn];
-    if (type == HMEmotionToolbarButtonTypeDefault) {
-        [self btnSelect:btn];
-    }
     
     NSString *image = @"compose_emotion_table_mid_normal";
     NSString *selected = @"compose_emotion_table_mid_selected";
@@ -46,21 +43,25 @@
     }
     [btn setBackgroundImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
     [btn setBackgroundImage:[UIImage imageNamed:selected] forState:UIControlStateDisabled];
-
-    
     return btn;
     
   
     
 }
 - (void)btnSelect:(HMResponseButton *)button {
-    self.selectedBtton.enabled = YES;//原来的设置为yes
+    self.selectedBtn.enabled = YES;
     button.enabled = NO;
-    self.selectedBtton = button;
+    self.selectedBtn = button;
+    
     
     if ([self.delegate respondsToSelector:@selector(emotionToolbar:buttonType:)]) {
         [self.delegate emotionToolbar:self buttonType:button.tag];
     }
+}
+- (void)setDelegate:(id<HMEmotionToolbarDelegate>)delegate {
+    _delegate = delegate;
+    [self btnSelect:(HMResponseButton *)[self viewWithTag:HMEmotionToolbarButtonTypeDefault]];
+    
 }
 - (void)layoutSubviews {
     [super layoutSubviews];

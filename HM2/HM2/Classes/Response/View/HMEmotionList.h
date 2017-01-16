@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface HMEmotionList : UIView
-
+@property (nonatomic,strong) NSArray *emotions;
 @end

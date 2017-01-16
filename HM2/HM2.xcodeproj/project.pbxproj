@@ -12,6 +12,7 @@
 		610A2F261E2A094D00E0F71E /* HMEmotionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 610A2F251E2A094D00E0F71E /* HMEmotionList.m */; };
 		610A2F291E2A6F8000E0F71E /* HMResponseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 610A2F281E2A6F8000E0F71E /* HMResponseButton.m */; };
 		610A30F11E2B8AA100E0F71E /* EmotionIcons in Resources */ = {isa = PBXBuildFile; fileRef = 610A30F01E2B8AA100E0F71E /* EmotionIcons */; };
+		610A30F51E2CFC9300E0F71E /* HWEmotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 610A30F41E2CFC9300E0F71E /* HWEmotion.m */; };
 		6117B08D1CD0F19E00C764CF /* HMNewFutureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6117B08C1CD0F19E00C764CF /* HMNewFutureViewController.m */; };
 		614ED37D1CCC71CE001EE125 /* HMMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 614ED37C1CCC71CE001EE125 /* HMMenu.m */; };
 		6152C3E81CCE300E00305E59 /* HMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6152C3E71CCE300E00305E59 /* HMTabBar.m */; };
@@ -124,6 +125,8 @@
 		610A2F271E2A6F8000E0F71E /* HMResponseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMResponseButton.h; sourceTree = "<group>"; };
 		610A2F281E2A6F8000E0F71E /* HMResponseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMResponseButton.m; sourceTree = "<group>"; };
 		610A30F01E2B8AA100E0F71E /* EmotionIcons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = EmotionIcons; sourceTree = "<group>"; };
+		610A30F31E2CFC9300E0F71E /* HWEmotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWEmotion.h; sourceTree = "<group>"; };
+		610A30F41E2CFC9300E0F71E /* HWEmotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWEmotion.m; sourceTree = "<group>"; };
 		6117B08B1CD0F19E00C764CF /* HMNewFutureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNewFutureViewController.h; sourceTree = "<group>"; };
 		6117B08C1CD0F19E00C764CF /* HMNewFutureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNewFutureViewController.m; sourceTree = "<group>"; };
 		611AB45B1CCA1DDD003C2211 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -320,6 +323,7 @@
 		610A2F1C1E2A090000E0F71E /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				610A30F21E2CFC9300E0F71E /* Model */,
 				610A2F1D1E2A091100E0F71E /* View */,
 			);
 			path = Response;
@@ -338,6 +342,15 @@
 				610A2F281E2A6F8000E0F71E /* HMResponseButton.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		610A30F21E2CFC9300E0F71E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				610A30F31E2CFC9300E0F71E /* HWEmotion.h */,
+				610A30F41E2CFC9300E0F71E /* HWEmotion.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		6117B08A1CD0F14A00C764CF /* NewFuture */ = {
@@ -955,6 +968,7 @@
 				61702A2E1CCB5B17002E15A5 /* HMTest2ViewController.m in Sources */,
 				9AAED36D1E03857200FA9E66 /* UIImage+MultiFormat.m in Sources */,
 				610A2F231E2A093E00E0F71E /* HMEmotionToolbar.m in Sources */,
+				610A30F51E2CFC9300E0F71E /* HWEmotion.m in Sources */,
 				61CDE3C81E054CDC0040BCEF /* MJArgument.m in Sources */,
 				61702A3A1CCB921D002E15A5 /* HMSeatchBarTextField.m in Sources */,
 				61CDE3F41E069A280040BCEF /* HWLoadMoreFooter.m in Sources */,
